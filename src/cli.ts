@@ -6,6 +6,7 @@ import { runInstall } from './commands/install.js';
 import { runList } from './commands/list.js';
 import { runUpdate } from './commands/update.js';
 import { runUninstall } from './commands/uninstall.js';
+import { runInfo } from './commands/info.js';
 import { validateScope, validatePluginName, validateMarketplaceId, type Scope } from './installer/index.js';
 import { SkillmeError } from './utils/errors.js';
 import { logger } from './utils/logger.js';
@@ -124,6 +125,13 @@ program
   .description('Refresh the marketplace index from GitHub')
   .action(async () => {
     await runUpdate();
+  });
+
+program
+  .command('info <name>')
+  .description('Show details for a plugin')
+  .action(async (name: string) => {
+    await runInfo(guardPluginName(name));
   });
 
 program

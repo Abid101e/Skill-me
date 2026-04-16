@@ -135,9 +135,6 @@ export default async function Home() {
               style={{ background: 'radial-gradient(ellipse at 60% 0%, #6366f1 0%, transparent 60%)' }}
             />
             <div className="relative">
-              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-violet-400">
-                New
-              </p>
               <h2 className="mb-3 text-2xl font-bold text-white" style={{ fontFamily: 'Syne, sans-serif' }}>
                 Browse by Stack
               </h2>
