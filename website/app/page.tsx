@@ -29,11 +29,11 @@ export default async function Home() {
       <div className="relative z-10">
 
         {/* ── NAV ── */}
-        <nav className="flex items-center justify-between px-6 py-5 md:px-12">
+        <nav className="flex items-center justify-between px-4 py-5 sm:px-6 md:px-12">
           <span className="font-mono text-lg font-semibold text-white">
             skill<span style={{ color: '#10b981' }}>me</span>
           </span>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <a
               href="https://github.com/Abid101e/Skill-me"
               target="_blank"
@@ -46,7 +46,7 @@ export default async function Home() {
               href="https://www.npmjs.com/package/skillme"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-zinc-300 transition-all hover:border-emerald-500/50 hover:text-white"
+              className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-zinc-300 transition-all hover:border-emerald-500/50 hover:text-white sm:px-4"
             >
               npm
             </a>
@@ -54,7 +54,7 @@ export default async function Home() {
         </nav>
 
         {/* ── HERO ── */}
-        <section className="mx-auto max-w-4xl px-6 pb-24 pt-20 text-center md:px-12 md:pt-28">
+        <section className="mx-auto max-w-4xl px-4 pb-20 pt-16 text-center sm:px-6 sm:pb-24 sm:pt-20 md:px-12 md:pt-28">
 
           {/* badge */}
           <div className="fade-up fade-up-1 mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/8 px-4 py-1.5">
@@ -66,7 +66,7 @@ export default async function Home() {
 
           {/* headline */}
           <h1
-            className="fade-up fade-up-2 mb-6 text-5xl font-extrabold leading-tight tracking-tight text-white md:text-7xl"
+            className="fade-up fade-up-2 mb-6 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl md:text-7xl"
             style={{ fontFamily: 'Syne, sans-serif' }}
           >
             The missing plugin{' '}
@@ -96,7 +96,7 @@ export default async function Home() {
           </div>
 
           {/* stats */}
-          <div className="fade-up fade-up-5 mt-16 flex items-center justify-center gap-10 border-t border-white/6 pt-10">
+          <div className="fade-up fade-up-5 mt-12 flex flex-wrap items-center justify-center gap-6 border-t border-white/6 pt-8 sm:mt-16 sm:gap-10 sm:pt-10">
             {[
               { value: `${stats.plugins}+`, label: 'Plugins' },
               { value: `${stats.marketplaces}`, label: 'Marketplaces' },
@@ -119,7 +119,7 @@ export default async function Home() {
         </section>
 
         {/* ── HOW IT WORKS ── */}
-        <section className="mx-auto max-w-4xl px-6 pb-24 md:px-12">
+        <section className="mx-auto max-w-4xl px-4 pb-20 sm:px-6 sm:pb-24 md:px-12">
           <h2
             className="mb-10 text-center text-2xl font-bold text-white"
             style={{ fontFamily: 'Syne, sans-serif' }}
@@ -159,8 +159,8 @@ export default async function Home() {
         </section>
 
         {/* ── FEATURED PLUGINS ── */}
-        <section className="mx-auto max-w-6xl px-6 pb-32 md:px-12">
-          <div className="mb-10 flex items-end justify-between">
+        <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-32 md:px-12">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <div>
               <h2
                 className="text-3xl font-bold text-white"
@@ -193,7 +193,7 @@ export default async function Home() {
         </section>
 
         {/* ── FOOTER ── */}
-        <footer className="border-t border-white/6 px-6 py-8 md:px-12">
+        <footer className="border-t border-white/6 px-4 py-8 sm:px-6 md:px-12">
           <div className="mx-auto flex max-w-6xl items-center justify-between">
             <span className="font-mono text-sm text-zinc-600">
               skill<span style={{ color: '#10b981' }}>me</span> · MIT License
