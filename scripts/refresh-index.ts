@@ -11,21 +11,26 @@
 import { fetchIndex } from '../src/marketplace/index.js';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUT_PATH = path.resolve(__dirname, '../data/index.json');
+async function main() {
+  const OUT_PATH = path.resolve(process.cwd(), 'data/index.json');
 
-console.log('skillme · refreshing plugin index...\n');
+  console.log('skillme · refreshing plugin index...\n');
 
-const data = await fetchIndex(/* forceRefresh */ true);
+  const data = await fetchIndex(/* forceRefresh */ true);
 
-const pluginCount = Object.keys(data.plugins).length;
-const version = new Date().toISOString().slice(0, 10).replace(/-/g, '.');
-const refreshed = { ...data, version };
+  const pluginCount = Object.keys(data.plugins).length;
+  const version = new Date().toISOString().slice(0, 10).replace(/-/g, '.');
+  const refreshed = { ...data, version };
 
-fs.writeFileSync(OUT_PATH, JSON.stringify(refreshed, null, 2) + '\n');
+  fs.writeFileSync(OUT_PATH, JSON.stringify(refreshed, null, 2) + '\n');
 
-console.log(`\n✓  ${pluginCount} plugins written to data/index.json`);
-console.log(`   version: ${version}`);
-console.log(`   marketplaces: ${data.marketplaces.length}`);
+  console.log(`\n✓  ${pluginCount} plugins written to data/index.json`);
+  console.log(`   version: ${version}`);
+  console.log(`   marketplaces: ${data.marketplaces.length}`);
+}
+
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
