@@ -112,9 +112,13 @@ function saveCache(data: IndexData): void {
 
 async function githubFetch<T>(url: string): Promise<T | null> {
   logger.debug(`GET ${url}`);
+  const headers: Record<string, string> = { Accept: 'application/vnd.github+json' };
+  if (process.env['GITHUB_TOKEN']) {
+    headers['Authorization'] = `Bearer ${process.env['GITHUB_TOKEN']}`;
+  }
   try {
     const res = await fetch(url, {
-      headers: { Accept: 'application/vnd.github+json' },
+      headers,
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
     if (!res.ok) {
