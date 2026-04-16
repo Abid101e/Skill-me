@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "2026.04.16",
   "indexUrl": "https://raw.githubusercontent.com/Abid101e/Skill-me/main/data/index.json",
   "cacheTtlMinutes": 60,
   "marketplaces": [
@@ -29,139 +29,1470 @@
     }
   ],
   "plugins": {
-    "typescript-lsp": {
+    "agent-sdk-dev": {
       "marketplace": "claude-plugins-official",
-      "description": "Real-time TypeScript type errors and go-to-definition",
-      "tags": ["typescript", "lsp", "language-server"],
-      "trusted": true,
-      "requiresBinary": "typescript-language-server"
-    },
-    "commit-commands": {
-      "marketplace": "claude-plugins-official",
-      "description": "Git commit, push, and PR creation workflow",
-      "tags": ["git", "commit", "workflow"],
+      "description": "Tools for building with the Claude Agent SDK",
+      "tags": [
+        "agent",
+        "sdk",
+        "development"
+      ],
       "trusted": true
     },
-    "pr-review-toolkit": {
+    "clangd-lsp": {
       "marketplace": "claude-plugins-official",
-      "description": "Specialized agents for reviewing pull requests",
-      "tags": ["git", "pr", "review", "workflow"],
+      "description": "Plugin from claude-plugins-official",
+      "tags": [],
       "trusted": true
     },
-    "github": {
+    "claude-code-setup": {
       "marketplace": "claude-plugins-official",
-      "description": "GitHub integration for issues, PRs, and repositories",
-      "tags": ["github", "git", "integration"],
+      "description": "Analyze codebases and recommend tailored Claude Code automations such as hooks, skills, MCP servers, and subagents.",
+      "tags": [],
       "trusted": true
     },
-    "gitlab": {
+    "claude-md-management": {
       "marketplace": "claude-plugins-official",
-      "description": "GitLab integration for issues, MRs, and repositories",
-      "tags": ["gitlab", "git", "integration"],
+      "description": "Tools to maintain and improve CLAUDE.md files - audit quality, capture session learnings, and keep project memory current.",
+      "tags": [],
       "trusted": true
     },
     "code-review": {
       "marketplace": "claude-plugins-official",
       "description": "Automated code review skill",
-      "tags": ["review", "quality", "workflow"],
+      "tags": [
+        "review",
+        "quality",
+        "workflow"
+      ],
       "trusted": true
     },
     "code-simplifier": {
       "marketplace": "claude-plugins-official",
       "description": "Simplify and clean up code for clarity and maintainability",
-      "tags": ["quality", "refactor", "simplify"],
+      "tags": [
+        "quality",
+        "refactor",
+        "simplify"
+      ],
       "trusted": true
     },
-    "frontend-design": {
+    "commit-commands": {
       "marketplace": "claude-plugins-official",
-      "description": "Frontend design and UI component skills",
-      "tags": ["frontend", "design", "ui", "css"],
+      "description": "Git commit, push, and PR creation workflow",
+      "tags": [
+        "git",
+        "commit",
+        "workflow"
+      ],
       "trusted": true
     },
-    "security-guidance": {
+    "csharp-lsp": {
       "marketplace": "claude-plugins-official",
-      "description": "Security best practices and vulnerability detection",
-      "tags": ["security", "vulnerability", "owasp"],
+      "description": "Plugin from claude-plugins-official",
+      "tags": [],
       "trusted": true
     },
-    "pyright-lsp": {
+    "example-plugin": {
       "marketplace": "claude-plugins-official",
-      "description": "Real-time Python type errors and go-to-definition",
-      "tags": ["python", "lsp", "language-server"],
-      "trusted": true,
-      "requiresBinary": "pyright-langserver"
-    },
-    "gopls-lsp": {
-      "marketplace": "claude-plugins-official",
-      "description": "Real-time Go type errors and code navigation",
-      "tags": ["go", "lsp", "language-server"],
-      "trusted": true,
-      "requiresBinary": "gopls"
-    },
-    "rust-analyzer-lsp": {
-      "marketplace": "claude-plugins-official",
-      "description": "Real-time Rust type errors and code navigation",
-      "tags": ["rust", "lsp", "language-server"],
-      "trusted": true,
-      "requiresBinary": "rust-analyzer"
-    },
-    "plugin-dev": {
-      "marketplace": "claude-plugins-official",
-      "description": "Toolkit for creating Claude Code plugins and skills",
-      "tags": ["plugin", "development", "skill"],
+      "description": "A comprehensive example plugin demonstrating all Claude Code extension options including commands, agents, skills, hooks, and MCP servers",
+      "tags": [],
       "trusted": true
     },
-    "hookify": {
+    "explanatory-output-style": {
       "marketplace": "claude-plugins-official",
-      "description": "Automate Claude Code behaviors with event hooks",
-      "tags": ["hooks", "automation", "workflow"],
+      "description": "Adds educational insights about implementation choices and codebase patterns (mimics the deprecated Explanatory output style)",
+      "tags": [],
       "trusted": true
     },
     "feature-dev": {
       "marketplace": "claude-plugins-official",
       "description": "End-to-end feature development workflow",
-      "tags": ["workflow", "feature", "development"],
+      "tags": [
+        "workflow",
+        "feature",
+        "development"
+      ],
       "trusted": true
     },
-    "agent-sdk-dev": {
+    "frontend-design": {
       "marketplace": "claude-plugins-official",
-      "description": "Tools for building with the Claude Agent SDK",
-      "tags": ["agent", "sdk", "development"],
+      "description": "Frontend design and UI component skills",
+      "tags": [
+        "frontend",
+        "design",
+        "ui",
+        "css"
+      ],
+      "trusted": true
+    },
+    "gopls-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Real-time Go type errors and code navigation",
+      "tags": [
+        "go",
+        "lsp",
+        "language-server"
+      ],
+      "trusted": true,
+      "requiresBinary": "gopls"
+    },
+    "hookify": {
+      "marketplace": "claude-plugins-official",
+      "description": "Automate Claude Code behaviors with event hooks",
+      "tags": [
+        "hooks",
+        "automation",
+        "workflow"
+      ],
+      "trusted": true
+    },
+    "jdtls-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Plugin from claude-plugins-official",
+      "tags": [],
+      "trusted": true
+    },
+    "kotlin-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Plugin from claude-plugins-official",
+      "tags": [],
+      "trusted": true
+    },
+    "learning-output-style": {
+      "marketplace": "claude-plugins-official",
+      "description": "Interactive learning mode that requests meaningful code contributions at decision points (mimics the unshipped Learning output style)",
+      "tags": [],
+      "trusted": true
+    },
+    "lua-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Plugin from claude-plugins-official",
+      "tags": [],
       "trusted": true
     },
     "math-olympiad": {
       "marketplace": "claude-plugins-official",
       "description": "Mathematical problem solving and proof assistance",
-      "tags": ["math", "education", "problem-solving"],
+      "tags": [
+        "math",
+        "education",
+        "problem-solving"
+      ],
+      "trusted": true
+    },
+    "mcp-server-dev": {
+      "marketplace": "claude-plugins-official",
+      "description": "Skills for designing and building MCP servers that work seamlessly with Claude — guides you through deployment models (remote HTTP, MCPB, local), tool design patterns, auth, and interactive MCP apps.",
+      "tags": [],
+      "trusted": true
+    },
+    "php-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Plugin from claude-plugins-official",
+      "tags": [],
+      "trusted": true
+    },
+    "playground": {
+      "marketplace": "claude-plugins-official",
+      "description": "Creates interactive HTML playgrounds — self-contained single-file explorers with visual controls, live preview, and prompt output with copy button",
+      "tags": [],
+      "trusted": true
+    },
+    "plugin-dev": {
+      "marketplace": "claude-plugins-official",
+      "description": "Toolkit for creating Claude Code plugins and skills",
+      "tags": [
+        "plugin",
+        "development",
+        "skill"
+      ],
+      "trusted": true
+    },
+    "pr-review-toolkit": {
+      "marketplace": "claude-plugins-official",
+      "description": "Specialized agents for reviewing pull requests",
+      "tags": [
+        "git",
+        "pr",
+        "review",
+        "workflow"
+      ],
+      "trusted": true
+    },
+    "pyright-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Real-time Python type errors and go-to-definition",
+      "tags": [
+        "python",
+        "lsp",
+        "language-server"
+      ],
+      "trusted": true,
+      "requiresBinary": "pyright-langserver"
+    },
+    "ralph-loop": {
+      "marketplace": "claude-plugins-official",
+      "description": "Continuous self-referential AI loops for interactive iterative development, implementing the Ralph Wiggum technique. Run Claude in a while-true loop with the same prompt until task completion.",
+      "tags": [],
+      "trusted": true
+    },
+    "ruby-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Plugin from claude-plugins-official",
+      "tags": [],
+      "trusted": true
+    },
+    "rust-analyzer-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Real-time Rust type errors and code navigation",
+      "tags": [
+        "rust",
+        "lsp",
+        "language-server"
+      ],
+      "trusted": true,
+      "requiresBinary": "rust-analyzer"
+    },
+    "security-guidance": {
+      "marketplace": "claude-plugins-official",
+      "description": "Security best practices and vulnerability detection",
+      "tags": [
+        "security",
+        "vulnerability",
+        "owasp"
+      ],
       "trusted": true
     },
     "session-report": {
       "marketplace": "claude-plugins-official",
       "description": "Generate reports of your Claude Code sessions",
-      "tags": ["reporting", "analytics", "session"],
+      "tags": [
+        "reporting",
+        "analytics",
+        "session"
+      ],
       "trusted": true
+    },
+    "skill-creator": {
+      "marketplace": "claude-plugins-official",
+      "description": "Create new skills, improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, or benchmark skill performance with variance analysis.",
+      "tags": [],
+      "trusted": true
+    },
+    "swift-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Plugin from claude-plugins-official",
+      "tags": [],
+      "trusted": true
+    },
+    "typescript-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Real-time TypeScript type errors and go-to-definition",
+      "tags": [
+        "typescript",
+        "lsp",
+        "language-server"
+      ],
+      "trusted": true,
+      "requiresBinary": "typescript-language-server"
+    },
+    "asana": {
+      "marketplace": "claude-plugins-official",
+      "description": "Asana project management integration. Create and manage tasks, search projects, update assignments, track progress, and integrate your development workflow with Asana's work management platform.",
+      "tags": [],
+      "trusted": true
+    },
+    "context7": {
+      "marketplace": "claude-plugins-official",
+      "description": "Upstash Context7 MCP server for up-to-date documentation lookup. Pull version-specific documentation and code examples directly from source repositories into your LLM context.",
+      "tags": [],
+      "trusted": true
+    },
+    "discord": {
+      "marketplace": "claude-plugins-official",
+      "description": "Discord channel for Claude Code — messaging bridge with built-in access control. Manage pairing, allowlists, and policy via /discord:access.",
+      "tags": [
+        "discord",
+        "messaging",
+        "channel",
+        "mcp"
+      ],
+      "trusted": true
+    },
+    "fakechat": {
+      "marketplace": "claude-plugins-official",
+      "description": "Localhost iMessage-style web chat for Claude Code — test surface with file upload and edits. No tokens, no access control.",
+      "tags": [
+        "fakechat",
+        "web",
+        "localhost",
+        "testing",
+        "channel",
+        "mcp"
+      ],
+      "trusted": true
+    },
+    "firebase": {
+      "marketplace": "claude-plugins-official",
+      "description": "Google Firebase MCP integration. Manage Firestore databases, authentication, cloud functions, hosting, and storage. Build and manage your Firebase backend directly from your development workflow.",
+      "tags": [],
+      "trusted": true
+    },
+    "github": {
+      "marketplace": "claude-plugins-official",
+      "description": "GitHub integration for issues, PRs, and repositories",
+      "tags": [
+        "github",
+        "git",
+        "integration"
+      ],
+      "trusted": true
+    },
+    "gitlab": {
+      "marketplace": "claude-plugins-official",
+      "description": "GitLab integration for issues, MRs, and repositories",
+      "tags": [
+        "gitlab",
+        "git",
+        "integration"
+      ],
+      "trusted": true
+    },
+    "greptile": {
+      "marketplace": "claude-plugins-official",
+      "description": "AI code review agent for GitHub and GitLab. View and resolve Greptile's PR review comments directly from Claude Code.",
+      "tags": [
+        "code-review",
+        "pull-requests",
+        "github",
+        "gitlab",
+        "ai"
+      ],
+      "trusted": true
+    },
+    "imessage": {
+      "marketplace": "claude-plugins-official",
+      "description": "iMessage channel for Claude Code — reads chat.db directly, sends via AppleScript. Built-in access control; manage pairing, allowlists, and policy via /imessage:access.",
+      "tags": [
+        "imessage",
+        "messaging",
+        "channel",
+        "mcp"
+      ],
+      "trusted": true
+    },
+    "laravel-boost": {
+      "marketplace": "claude-plugins-official",
+      "description": "Laravel development toolkit MCP server. Provides intelligent assistance for Laravel applications including Artisan commands, Eloquent queries, routing, migrations, and framework-specific code generation.",
+      "tags": [],
+      "trusted": true
+    },
+    "linear": {
+      "marketplace": "claude-plugins-official",
+      "description": "Linear issue tracking integration. Create issues, manage projects, update statuses, search across workspaces, and streamline your software development workflow with Linear's modern issue tracker.",
+      "tags": [],
+      "trusted": true
+    },
+    "playwright": {
+      "marketplace": "claude-plugins-official",
+      "description": "Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
+      "tags": [],
+      "trusted": true
+    },
+    "serena": {
+      "marketplace": "claude-plugins-official",
+      "description": "Semantic code analysis MCP server providing intelligent code understanding, refactoring suggestions, and codebase navigation through language server protocol integration.",
+      "tags": [],
+      "trusted": true
+    },
+    "supabase": {
+      "marketplace": "claude-plugins-official",
+      "description": "Supabase MCP integration for database operations, authentication, storage, and real-time subscriptions. Manage your Supabase projects, run SQL queries, and interact with your backend directly.",
+      "tags": [],
+      "trusted": true
+    },
+    "telegram": {
+      "marketplace": "claude-plugins-official",
+      "description": "Telegram channel for Claude Code — messaging bridge with built-in access control. Manage pairing, allowlists, and policy via /telegram:access.",
+      "tags": [
+        "telegram",
+        "messaging",
+        "channel",
+        "mcp"
+      ],
+      "trusted": true
+    },
+    "terraform": {
+      "marketplace": "claude-plugins-official",
+      "description": "The Terraform MCP Server provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development.",
+      "tags": [],
+      "trusted": true
+    },
+    "2-commit-fast": {
+      "marketplace": "cc-marketplace",
+      "description": "Automates git commit process by selecting the first suggested message, generating structured commits with consistent formatting while skipping manual confirmation and removing Claude co-Contributorship footer",
+      "tags": [],
+      "trusted": false
+    },
+    "accessibility-expert": {
+      "marketplace": "cc-marketplace",
+      "description": "Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "ai-engineer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when implementing AI/ML features, integrating language models, building recommendation systems, or adding intelligent automation to applications. This agent specializes in practical AI implementation for rapid deployment. Examples:\\n\\n<example>\\nContext: Adding AI features to an app\\nuser: \"We need AI-powered content recommendations\"\\nassistant: \"I'll implement a smart recommendation engine. Let me use the ai-engineer agent to build an ML pipeline that learns from user behavior.\"\\n<commentary>\\nRecommendation systems require careful ML implementation and continuous learning capabilities.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Integrating language models\\nuser: \"Add an AI chatbot to help users navigate our app\"\\nassistant: \"I'll integrate a conversational AI assistant. Let me use the ai-engineer agent to implement proper prompt engineering and response handling.\"\\n<commentary>\\nLLM integration requires expertise in prompt design, token management, and response streaming.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Implementing computer vision features\\nuser: \"Users should be able to search products by taking a photo\"\\nassistant: \"I'll implement visual search using computer vision. Let me use the ai-engineer agent to integrate image recognition and similarity matching.\"\\n<commentary>\\nComputer vision features require efficient processing and accurate model selection.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "ai-ethics-governance-specialist": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to implement AI ethics frameworks, governance policies, and responsible AI practices for B2B applications. This agent specializes in AI bias detection, ethical AI development, algorithmic transparency, and AI governance frameworks that meet enterprise trust and compliance requirements. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "analytics-reporter": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when analyzing metrics, generating insights from data, creating performance reports, or making data-driven recommendations. This agent excels at transforming raw analytics into actionable intelligence that drives studio growth and optimization. Examples:\\n\\n<example>\\nContext: Monthly performance review needed",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "analyze-codebase": {
+      "marketplace": "cc-marketplace",
+      "description": "Generate comprehensive analysis and documentation of entire codebase",
+      "tags": [
+        "explore",
+        "plan"
+      ],
+      "trusted": false
+    },
+    "analyze-issue": {
+      "marketplace": "cc-marketplace",
+      "description": "Fetches GitHub issue details to create comprehensive implementation specifications, analyzing requirements and planning structured approach with clear implementation steps.",
+      "tags": [],
+      "trusted": false
+    },
+    "angelos-symbo": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to create or convert prompts using the SYMBO (symbolic) notation system. This agent MUST be activated whenever generating SYMBO prompts or converting existing prompts to symbolic format. Examples: <example>Context: User wants to create a symbolic prompt for a task management system. user: 'Create a SYMBO prompt for a project task tracker with memory and learning capabilities' assistant: 'I'll use the angelos-symbo agent to create this symbolic prompt following SYMBO notation rules' <commentary>The user is requesting a SYMBO prompt, so the angelos-symbo agent must be used to ensure proper symbolic notation and rule compliance.</commentary></example> <example>Context: User has a natural language prompt they want converted to SYMBO format. user: 'Convert this prompt to SYMBO notation: You are an AI that helps with code reviews by analyzing code quality, suggesting improvements, and tracking common issues across projects' assistant: 'I need to convert this to SYMBO notation using the angelos-symbo agent' <commentary>Since this involves SYMBO prompt generation/conversion, the angelos-symbo agent must be activated.</commentary></example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "api-contract-sync-manager": {
+      "marketplace": "cc-marketplace",
+      "description": "Validate and synchronize API contracts (OpenAPI, GraphQL) with implementation, detect breaking changes, and generate client code",
+      "tags": [],
+      "trusted": false
+    },
+    "api-integration-specialist": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to design and implement internal API architecture, developer experience, and API infrastructure for B2B applications. This agent specializes in REST API design, GraphQL implementation, API documentation, SDK development, and developer portal creation. Handles API performance optimization, versioning strategies, and internal service communication. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "api-tester": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent for comprehensive API testing including performance testing, load testing, and contract testing. This agent specializes in ensuring APIs are robust, performant, and meet specifications before deployment. Examples:\\n\\n<example>\\nContext: Testing API performance under load",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "app-store-optimizer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when preparing app store listings, researching keywords, optimizing app metadata, improving conversion rates, or analyzing app store performance. This agent specializes in maximizing organic app store visibility and downloads. Examples:\\n\\n<example>\\nContext: Preparing for app launch",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "audit": {
+      "marketplace": "cc-marketplace",
+      "description": "Perform security audit on codebase",
+      "tags": [
+        "code-review",
+        "security"
+      ],
+      "trusted": false
+    },
+    "b2b-project-shipper": {
+      "marketplace": "cc-marketplace",
+      "description": "PROACTIVELY use this agent when approaching B2B launch milestones, enterprise release deadlines, or B2B go-to-market activities. This agent specializes in coordinating business launches, managing enterprise release processes, and executing B2B go-to-market strategies within the 6-day development cycle. Should be triggered automatically when enterprise release dates are set, B2B launch plans are needed, or business market positioning is discussed. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "backend-architect": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when designing APIs, building server-side logic, implementing databases, or architecting scalable backend systems. This agent specializes in creating robust, secure, and performant backend services. Examples:\\n\\n<example>\\nContext: Designing a new API\\nuser: \"We need an API for our social sharing feature\"\\nassistant: \"I'll design a RESTful API with proper authentication and rate limiting. Let me use the backend-architect agent to create a scalable backend architecture.\"\\n<commentary>\\nAPI design requires careful consideration of security, scalability, and maintainability.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Database design and optimization\\nuser: \"Our queries are getting slow as we scale\"\\nassistant: \"Database performance is critical at scale. I'll use the backend-architect agent to optimize queries and implement proper indexing strategies.\"\\n<commentary>\\nDatabase optimization requires deep understanding of query patterns and indexing strategies.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Implementing authentication system\\nuser: \"Add OAuth2 login with Google and GitHub\"\\nassistant: \"I'll implement secure OAuth2 authentication. Let me use the backend-architect agent to ensure proper token handling and security measures.\"\\n<commentary>\\nAuthentication systems require careful security considerations and proper implementation.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "brand-guardian": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when establishing brand guidelines, ensuring visual consistency, managing brand assets, or evolving brand identity. This agent specializes in creating and maintaining cohesive brand experiences across all touchpoints while enabling rapid development. Examples:\\n\\n<example>\\nContext: Creating brand guidelines for a new app",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "bug-detective": {
+      "marketplace": "cc-marketplace",
+      "description": "Systematically debug issues with step-by-step troubleshooting approaches.",
+      "tags": [
+        "debugging"
+      ],
+      "trusted": false
+    },
+    "bug-fix": {
+      "marketplace": "cc-marketplace",
+      "description": "Streamlines bug fixing by creating a GitHub issue first, then a feature branch for implementing and thoroughly testing the solution before merging.",
+      "tags": [],
+      "trusted": false
+    },
+    "ceo-quality-controller-agent": {
+      "marketplace": "cc-marketplace",
+      "description": "Universal quality control orchestrator and final authority for any software development project. Dynamically discovers and coordinates with available sub-agents, performs comprehensive multi-dimensional quality assessment, security validation, and deployment readiness verification. Adapts to any project type, programming language, or development framework while maintaining enterprise-grade quality standards. Examples: <example>Context: Code changes ready for review across any project. user: 'Please review this code before commit' assistant: 'I'll use the 1-ceo-quality-control-agent to orchestrate comprehensive quality validation, discover available specialists, and perform final security scanning before approval.' <commentary>Universal quality control requires comprehensive validation across all dimensions regardless of project type.</commentary></example> <example>Context: Multi-agent work completion needing validation. user: 'Several agents completed their tasks, need quality review' assistant: 'Let me engage the 1-ceo-quality-control-agent to coordinate comprehensive validation across all completed work and ensure quality standards.' <commentary>Multi-agent coordination and quality validation applies to any development project.</commentary></example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "changelog-generator": {
+      "marketplace": "cc-marketplace",
+      "description": "Changelog Generator subagent",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "claude-desktop-extension": {
+      "marketplace": "cc-marketplace",
+      "description": "This command provides the context necessary for Claude Code to create the Desktop Extension or .dxt file of an MCP.",
+      "tags": [
+        "workflow"
+      ],
+      "trusted": false
+    },
+    "claude-dev-infrastructure": {
+      "marketplace": "cc-marketplace",
+      "description": "Comprehensive development infrastructure for Claude Code projects. Includes 12 AI skills, task coordination hooks, project templates, and a visual dev-manager dashboard.",
+      "tags": [
+        "infrastructure",
+        "task-tracking",
+        "hooks",
+        "skills",
+        "productivity",
+        "multi-instance"
+      ],
+      "trusted": false
+    },
+    "code-architect": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to design scalable architecture and folder structures for new features or projects. Examples include: when starting a new feature module, refactoring existing code organization, planning microservice boundaries, designing component hierarchies, or establishing project structure conventions. For example: user: 'I need to add a user authentication system to my app' -> assistant: 'I'll use the code-architect agent to design the architecture and folder structure for your authentication system' -> <uses agent>. Another example: user: 'How should I organize my e-commerce product catalog feature?' -> assistant: 'Let me use the code-architect agent to design a scalable structure for your product catalog' -> <uses agent>.",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "code-review-assistant": {
+      "marketplace": "cc-marketplace",
+      "description": "Get comprehensive code reviews with suggestions for improvements, best practices, and potential issues.",
+      "tags": [
+        "code-review"
+      ],
+      "trusted": false
+    },
+    "code-reviewer": {
+      "marketplace": "cc-marketplace",
+      "description": "Expert code review specialist. Proactively reviews code for quality, security, and maintainability. Use immediately after writing or modifying code.",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "codebase-documenter": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to analyze a service or codebase component and create comprehensive documentation in CLAUDE.md files. This agent should be invoked after implementing new services, major refactoring, or when documentation needs updating to reflect the current codebase structure. Examples: <example>Context: The user has just implemented a new authentication service and wants to document it properly. user: 'I just finished implementing the auth service, can you document how it works?' assistant: 'I'll use the codebase-documenter agent to analyze the authentication service and create detailed documentation in CLAUDE.md' <commentary>Since the user has completed a service implementation and needs documentation, use the Task tool to launch the codebase-documenter agent to create comprehensive CLAUDE.md documentation.</commentary></example> <example>Context: The user wants to ensure a newly added API module is properly documented for the team. user: 'We need documentation for the new payment processing API I just added' assistant: 'Let me use the codebase-documenter agent to analyze the payment processing API and create proper documentation' <commentary>The user needs documentation for a new API module, so use the codebase-documenter agent to create CLAUDE.md files with setup instructions and architectural notes.</commentary></example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "commit": {
+      "marketplace": "cc-marketplace",
+      "description": "Creates git commits using conventional commit format with appropriate emojis, following project standards and creating descriptive messages that explain the purpose of changes.",
+      "tags": [],
+      "trusted": false
+    },
+    "compliance-automation-specialist": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to automate compliance processes for SOC 2, ISO 27001, GDPR, HIPAA, and other enterprise regulatory requirements. This agent specializes in compliance automation, audit preparation, continuous monitoring, and regulatory framework implementation for B2B platforms. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "content-creator": {
+      "marketplace": "cc-marketplace",
+      "description": "Content Creator subagent",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "context7-docs-fetcher": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to fetch and utilize documentation from Context7 for specific libraries or frameworks. Examples: <example>Context: User is building a React application and needs documentation about hooks. user: 'I need to implement useState and useEffect in my React component' assistant: 'I'll use the context7-docs-fetcher agent to get the latest React documentation about hooks' <commentary>Since the user needs specific React documentation, use the context7-docs-fetcher agent to fetch relevant docs and provide accurate guidance.</commentary></example> <example>Context: User is working with Express.js and MongoDB and needs setup guidance. user: 'How do I create a REST API with Express and connect to MongoDB?' assistant: 'Let me use the context7-docs-fetcher agent to get the current documentation for both Express.js and MongoDB' <commentary>The user needs documentation for multiple libraries, so use the context7-docs-fetcher agent to fetch comprehensive docs.</commentary></example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "create-pr": {
+      "marketplace": "cc-marketplace",
+      "description": "Streamlines pull request creation by handling the entire workflow: creating a new branch, committing changes, formatting modified files with Biome, and submitting the PR.",
+      "tags": [],
+      "trusted": false
+    },
+    "create-pull-request": {
+      "marketplace": "cc-marketplace",
+      "description": "Provides comprehensive PR creation guidance with GitHub CLI, enforcing title conventions, following template structure, and offering concrete command examples with best practices.",
+      "tags": [],
+      "trusted": false
+    },
+    "create-worktrees": {
+      "marketplace": "cc-marketplace",
+      "description": "Creates git worktrees for all open PRs or specific branches, handling branches with slashes, cleaning up stale worktrees, and supporting custom branch creation for development.",
+      "tags": [],
+      "trusted": false
+    },
+    "customer-success-manager": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to optimize customer success operations for B2B enterprise clients. This agent specializes in customer health monitoring, expansion revenue identification, churn prevention, enterprise account management, and customer lifecycle optimization. Handles enterprise onboarding, adoption tracking, and strategic account growth. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "data-privacy-engineer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to implement data privacy engineering, GDPR compliance, data protection frameworks, and privacy-by-design principles for B2B applications. This agent specializes in privacy engineering, data minimization, consent management, and global privacy regulation compliance for enterprise platforms. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "data-scientist": {
+      "marketplace": "cc-marketplace",
+      "description": "Data analysis expert for SQL queries, BigQuery operations, and data insights. Use proactively for data analysis tasks and queries.",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "database-performance-optimizer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to optimize database performance for B2B applications at enterprise scale. This agent specializes in multi-tenant database optimization, query performance tuning, indexing strategies, connection pooling, and database scaling for SaaS platforms. Handles PostgreSQL, MySQL, MongoDB, and cloud database optimizations. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "debug-session": {
+      "marketplace": "cc-marketplace",
+      "description": "Ask Claude Code to help you debug an issue",
+      "tags": [
+        "debugging"
+      ],
+      "trusted": false
+    },
+    "debugger": {
+      "marketplace": "cc-marketplace",
+      "description": "Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "deployment-engineer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when setting up CI/CD pipelines, configuring Docker containers, deploying applications to cloud platforms, setting up Kubernetes clusters, implementing infrastructure as code, or automating deployment workflows. Examples: <example>Context: User is setting up a new project and needs deployment automation. user: \"I've built a FastAPI application and need to deploy it to production with proper CI/CD\" assistant: \"I'll use the deployment-engineer agent to set up a complete deployment pipeline with Docker, GitHub Actions, and production-ready configurations.\"</example> <example>Context: User mentions containerization or deployment issues. user: \"Our deployment process is manual and error-prone. We need to automate it.\" assistant: \"Let me use the deployment-engineer agent to design an automated CI/CD pipeline that eliminates manual steps and ensures reliable deployments.\"</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "desktop-app-dev": {
+      "marketplace": "cc-marketplace",
+      "description": "Desktop App Dev subagent",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "devops-automator": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when setting up CI/CD pipelines, configuring cloud infrastructure, implementing monitoring systems, or automating deployment processes. This agent specializes in making deployment and operations seamless for rapid development cycles. Examples:\\n\\n<example>\\nContext: Setting up automated deployments\\nuser: \"We need automatic deployments when we push to main\"\\nassistant: \"I'll set up a complete CI/CD pipeline. Let me use the devops-automator agent to configure automated testing, building, and deployment.\"\\n<commentary>\\nAutomated deployments require careful pipeline configuration and proper testing stages.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Infrastructure scaling issues\\nuser: \"Our app crashes when we get traffic spikes\"\\nassistant: \"I'll implement auto-scaling and load balancing. Let me use the devops-automator agent to ensure your infrastructure handles traffic gracefully.\"\\n<commentary>\\nScaling requires proper infrastructure setup with monitoring and automatic responses.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Monitoring and alerting setup\\nuser: \"We have no idea when things break in production\"\\nassistant: \"Observability is crucial for rapid iteration. I'll use the devops-automator agent to set up comprehensive monitoring and alerting.\"\\n<commentary>\\nProper monitoring enables fast issue detection and resolution in production.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "discuss": {
+      "marketplace": "cc-marketplace",
+      "description": "Collaborative technical discussion with proactive requirements gathering",
+      "tags": [
+        "plan"
+      ],
+      "trusted": false
+    },
+    "documentation-generator": {
+      "marketplace": "cc-marketplace",
+      "description": "Create comprehensive documentation for code, APIs, and projects.",
+      "tags": [
+        "documentation"
+      ],
+      "trusted": false
+    },
+    "double-check": {
+      "marketplace": "cc-marketplace",
+      "description": "An easy way to force agent to think again if it's statement that the \"Job is done and production ready\" is actually done - usually it's not. Thanks to this command you don't have to check after the agent if they did their job.",
+      "tags": [
+        "plan",
+        "code-review",
+        "workflow"
+      ],
+      "trusted": false
+    },
+    "enterprise-integrator-architect": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to design and implement complex external enterprise system integrations for B2B applications. This agent specializes in connecting your platform with Salesforce, HubSpot, Microsoft 365, Google Workspace, SAP, Oracle ERP, and other critical third-party business software. Handles external API orchestration, data synchronization with enterprise systems, webhook management for third-party services, and enterprise-grade integration patterns. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "enterprise-onboarding-specialist": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to design and optimize complex enterprise customer onboarding processes involving multiple stakeholders, change management, and organizational adoption. This agent specializes in enterprise implementation strategy, stakeholder management, change management, and large-scale rollout coordination for B2B platforms. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "enterprise-security-reviewer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent for comprehensive B2B security assessments, enterprise compliance validation, multi-tenant security reviews, and security audit preparation. This agent specializes in SOC 2, GDPR, ISO 27001 compliance and enterprise-grade security implementations for B2B SaaS platforms. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "experienced-engineer": {
+      "marketplace": "cc-marketplace",
+      "description": "A comprehensive plugin with specialized engineering subagents and productivity commands for software teams",
+      "tags": [
+        "engineering",
+        "team",
+        "productivity",
+        "code-quality",
+        "best-practices",
+        "agents",
+        "subagents"
+      ],
+      "trusted": false
+    },
+    "experiment-tracker": {
+      "marketplace": "cc-marketplace",
+      "description": "PROACTIVELY use this agent when experiments are started, modified, or when results need analysis. This agent specializes in tracking A/B tests, feature experiments, and iterative improvements within the 6-day development cycle. Should be triggered automatically when experimental code paths or feature flags are introduced. Examples:\\n\\n<example>\\nContext: When implementing feature flags or A/B test variants\\nuser: \"Add a feature flag to test the new onboarding flow\"\\nassistant: \"I've implemented the feature flag for the onboarding flow A/B test. Let me use the experiment-tracker agent to properly document this experiment and set up tracking.\"\\n<commentary>\\nEvery feature flag represents an experiment that needs proper tracking and success metrics.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: After deploying experimental features\\nuser: \"The new viral sharing feature is now live for 10% of users\"\\nassistant: \"Great! The viral sharing feature is deployed. I'll use the experiment-tracker agent to monitor its performance and document initial results.\"\\n<commentary>\\nLive experiments need immediate tracking setup to capture valuable data from the start.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: When reaching experiment milestones\\nuser: \"It's been a week since we launched the TikTok integration test\"\\nassistant: \"Perfect timing for analysis. Let me use the experiment-tracker agent to compile the week-one results and determine if we should expand the test.\"\\n<commentary>\\nRegular experiment checkpoints ensure data-driven decisions about feature rollouts.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Before making product decisions\\nuser: \"Should we keep the AI avatar feature or remove it?\"\\nassistant: \"Let me analyze the experiment data to inform this decision. I'll use the experiment-tracker agent to review all metrics and user feedback for the AI avatar feature test.\"\\n<commentary>\\nProduct decisions should be backed by experiment data, not gut feelings.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "explore": {
+      "marketplace": "cc-marketplace",
+      "description": "Helps Claude read a planning document and explore related files to get familiar with a topic. Asking Claude to prepare to discuss seems to work better than asking it to prepare to do specific work.\n\nThis is followed by Plan, then Execute.",
+      "tags": [
+        "explore"
+      ],
+      "trusted": false
+    },
+    "feedback-synthesizer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to analyze user feedback from multiple sources, identify patterns in user complaints or requests, synthesize insights from reviews, or prioritize feature development based on user input. This agent excels at turning raw feedback into actionable product insights. Examples:\\n\\n<example>\\nContext: Weekly review of user feedback",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "finance-tracker": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when managing budgets, optimizing costs, forecasting revenue, or analyzing financial performance. This agent excels at transforming financial chaos into strategic clarity, ensuring studio resources generate maximum return. Examples:\\n\\n<example>\\nContext: Planning next quarter's development budget",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "fix-github-issue": {
+      "marketplace": "cc-marketplace",
+      "description": "Analyzes and fixes GitHub issues using a structured approach with GitHub CLI for issue details, implementing necessary code changes, running tests, and creating proper commit messages.",
+      "tags": [],
+      "trusted": false
+    },
+    "fix-issue": {
+      "marketplace": "cc-marketplace",
+      "description": "Addresses GitHub issues by taking issue number as parameter, analyzing context, implementing solution, and testing/validating the fix for proper integration.",
+      "tags": [],
+      "trusted": false
+    },
+    "fix-pr": {
+      "marketplace": "cc-marketplace",
+      "description": "Fetches and fixes unresolved PR comments by automatically retrieving feedback, addressing reviewer concerns, making targeted code improvements, and streamlining the review process.",
+      "tags": [],
+      "trusted": false
+    },
+    "flutter-mobile-app-dev": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need expert assistance with Flutter mobile development tasks, including code analysis, widget creation, debugging, performance optimization, or architectural decisions. Examples: <example>Context: User is working on a Flutter app and faces issues with navigation. user: 'My Navigator.push isn't updating the UI correctly when moving to a new screen' assistant: 'Let me use the flutter-dev agent to analyze your navigation setup and provide a solution' <commentary>Since this is a Flutter-specific navigation issue, use the flutter-dev agent to provide expert guidance on Navigator problems.</commentary></example> <example>Context: User wants to create a custom widget that aligns with their app's design system. user: 'I need to create a custom button widget that matches our app's design system' assistant: 'I'll use the flutter-dev agent to create a button widget that aligns with your existing codebase structure and design patterns' <commentary>The user needs a Flutter widget that follows existing patterns, so use the flutter-dev agent.</commentary></example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "frontend-developer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when building user interfaces, implementing React/Vue/Angular components, handling state management, or optimizing frontend performance. This agent excels at creating responsive, accessible, and performant web applications. Examples:\\n\\n<example>\\nContext: Building a new user interface\\nuser: \"Create a dashboard for displaying user analytics\"\\nassistant: \"I'll build an analytics dashboard with interactive charts. Let me use the frontend-developer agent to create a responsive, data-rich interface.\"\\n<commentary>\\nComplex UI components require frontend expertise for proper implementation and performance.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Fixing UI/UX issues\\nuser: \"The mobile navigation is broken on small screens\"\\nassistant: \"I'll fix the responsive navigation issues. Let me use the frontend-developer agent to ensure it works perfectly across all device sizes.\"\\n<commentary>\\nResponsive design issues require deep understanding of CSS and mobile-first development.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Optimizing frontend performance\\nuser: \"Our app feels sluggish when loading large datasets\"\\nassistant: \"Performance optimization is crucial for user experience. I'll use the frontend-developer agent to implement virtualization and optimize rendering.\"\\n<commentary>\\nFrontend performance requires expertise in React rendering, memoization, and data handling.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "generate-api-docs": {
+      "marketplace": "cc-marketplace",
+      "description": "Generate API documentation for endpoints",
+      "tags": [
+        "documentation"
+      ],
+      "trusted": false
+    },
+    "github-issue-fix": {
+      "marketplace": "cc-marketplace",
+      "description": "This is a detailed way you can analyze the GitHub issues and let Claude handle them in best possible way.",
+      "tags": [
+        "debugging",
+        "refactoring",
+        "testing",
+        "security"
+      ],
+      "trusted": false
+    },
+    "growth-hacker": {
+      "marketplace": "cc-marketplace",
+      "description": "Growth Hacker subagent",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "husky": {
+      "marketplace": "cc-marketplace",
+      "description": "Sets up and manages Husky Git hooks by configuring pre-commit hooks, establishing commit message standards, integrating with linting tools, and ensuring code quality on commits.",
+      "tags": [],
+      "trusted": false
+    },
+    "infrastructure-maintainer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when monitoring system health, optimizing performance, managing scaling, or ensuring infrastructure reliability. This agent excels at keeping studio applications running smoothly while preparing for growth and preventing disasters. Examples:\\n\\n<example>\\nContext: App experiencing slow performance",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "instagram-curator": {
+      "marketplace": "cc-marketplace",
+      "description": "Instagram Curator subagent",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "joker": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to lighten the mood, create funny content, or add humor to any situation. This agent specializes in dad jokes, programming puns, and startup humor. Examples:\\n\\n<example>\\nContext: Team needs a laugh during a stressful sprint\\nuser: \"We've been debugging for hours and everyone's frustrated\"\\nassistant: \"Time for a morale boost! Let me use the joker agent to share some programming humor.\"\\n<commentary>\\nHumor can help reset team energy during challenging moments.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Creating fun error messages\\nuser: \"Our 404 page is boring\"\\nassistant: \"Let's make that error page memorable! I'll use the joker agent to create some funny 404 messages.\"\\n<commentary>\\nHumorous error pages can turn frustration into delight.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "kreatsaas": {
+      "marketplace": "cc-marketplace",
+      "description": "SaaS Builder Guide - Build production-ready SaaS from design to deployment with 11 skill guides, 5 AI agents, and beginner-friendly FAQ",
+      "tags": [
+        "saas",
+        "builder",
+        "guide",
+        "beginner",
+        "design",
+        "architecture",
+        "deployment",
+        "nextjs",
+        "korean"
+      ],
+      "trusted": false
+    },
+    "legal-advisor": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need legal advisory, compliance documentation, RFP response creation, and enterprise contract support for B2B applications. This agent specializes in legal document creation, regulatory analysis, enterprise procurement compliance, and RFP winning strategies. Transforms complex legal requirements into competitive advantages. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "legal-compliance-checker": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when reviewing terms of service, privacy policies, ensuring regulatory compliance, or handling legal requirements. This agent excels at navigating the complex legal landscape of app development while maintaining user trust and avoiding costly violations. Examples:\\n\\n<example>\\nContext: Launching app in European markets",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "lyra": {
+      "marketplace": "cc-marketplace",
+      "description": "Lyra - a master-level AI prompt optimization specialist.",
+      "tags": [
+        "workflow"
+      ],
+      "trusted": false
+    },
+    "math": {
+      "marketplace": "cc-marketplace",
+      "description": "Deterministic math operations using SymPy - arithmetic, algebra, calculus, linear algebra, number theory, and statistics",
+      "tags": [
+        "math",
+        "sympy",
+        "calculus",
+        "algebra",
+        "calculator"
+      ],
+      "trusted": false
+    },
+    "mobile-app-builder": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when developing native iOS or Android applications, implementing React Native features, or optimizing mobile performance. This agent specializes in creating smooth, native-feeling mobile experiences. Examples:\\n\\n<example>\\nContext: Building a new mobile app\\nuser: \"Create a TikTok-style video feed for our app\"\\nassistant: \"I'll build a performant video feed with smooth scrolling. Let me use the mobile-app-builder agent to implement native performance optimizations.\"\\n<commentary>\\nVideo feeds require careful mobile optimization for smooth scrolling and memory management.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Implementing mobile-specific features\\nuser: \"Add push notifications and biometric authentication\"\\nassistant: \"I'll implement native push notifications and Face ID/fingerprint auth. Let me use the mobile-app-builder agent to ensure proper platform integration.\"\\n<commentary>\\nNative features require platform-specific implementation and proper permissions handling.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Cross-platform development\\nuser: \"We need this feature on both iOS and Android\"\\nassistant: \"I'll implement it using React Native for code reuse. Let me use the mobile-app-builder agent to ensure native performance on both platforms.\"\\n<commentary>\\nCross-platform development requires balancing code reuse with platform-specific optimizations.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "mobile-ux-optimizer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to optimize UI/UX components or interfaces for mobile-first experiences, analyze existing design themes, or ensure mobile usability standards are met. Examples: <example>Context: User has created a desktop-focused component and needs it optimized for mobile. user: 'I've built this navigation component but it's not working well on mobile devices' assistant: 'Let me use the mobile-ux-optimizer agent to analyze and improve this component for mobile-first experience' <commentary>The user needs mobile optimization expertise, so use the mobile-ux-optimizer agent to provide specific mobile UX improvements.</commentary></example> <example>Context: User is implementing a new feature and wants to ensure it follows the existing design theme. user: 'I'm adding a new form component to the app, can you help make sure it matches our design system?' assistant: 'I'll use the mobile-ux-optimizer agent to ensure this form component aligns with your existing theme and mobile-first principles' <commentary>Since this involves both theme consistency and mobile optimization, the mobile-ux-optimizer agent is the right choice.</commentary></example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "model-context-protocol-mcp-expert": {
+      "marketplace": "cc-marketplace",
+      "description": "Model Context Protocol Mcp Expert subagent",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "monitoring-observability-specialist": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to implement comprehensive monitoring, observability, and alerting systems for enterprise B2B applications. This agent specializes in APM, logging, metrics, distributed tracing, SLA monitoring, and proactive incident management for business-critical systems. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "n8n-workflow-builder": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to design, build, or validate n8n automation workflows. This agent specializes in creating efficient n8n workflows using proper validation techniques and MCP tools integration.\\n\\nExamples:\\n- <example>\\n  Context: User wants to create a Slack notification workflow when a new GitHub issue is created.\\n  user: \"I need to create an n8n workflow that sends a Slack message whenever a new GitHub issue is opened\"\\n  assistant: \"I'll use the n8n-workflow-builder agent to design and build this GitHub-to-Slack automation workflow with proper validation.\"\\n  <commentary>\\n  The user needs n8n workflow creation, so use the n8n-workflow-builder agent to handle the complete workflow design, validation, and deployment process.\\n  </commentary>\\n</example>\\n- <example>\\n  Context: User has an existing n8n workflow that needs debugging and optimization.\\n  user: \"My n8n workflow keeps failing at the HTTP Request node, can you help me fix it?\"\\n  assistant: \"I'll use the n8n-workflow-builder agent to analyze and debug your workflow, focusing on the HTTP Request node configuration.\"\\n  <commentary>\\n  Since this involves n8n workflow troubleshooting and validation, use the n8n-workflow-builder agent to diagnose and fix the issue.\\n  </commentary>\\n</example>\\n- <example>\\n  Context: User wants to understand n8n best practices and available nodes for a specific use case.\\n  user: \"What are the best n8n nodes for processing CSV data and sending email reports?\"\\n  assistant: \"I'll use the n8n-workflow-builder agent to explore the available nodes and recommend the best approach for CSV processing and email automation.\"\\n  <commentary>\\n  This requires n8n expertise and node discovery, so use the n8n-workflow-builder agent to provide comprehensive guidance.\\n  </commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "onomastophes": {
+      "marketplace": "cc-marketplace",
+      "description": "Use proactively for generating creative non-olympian Greek god names with rich backstories, mythological authenticity, and modern accessibility for storytelling projects",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "openapi-expert": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent to update, synchronize, or validate the OpenAPI specification (openapi.yml) against the actual REST API implementation. This includes adding new endpoints, updating request/response schemas, fixing discrepancies between the spec and code, or ensuring complete API documentation coverage.",
+      "tags": [
+        "documentation",
+        "openapi",
+        "workflow"
+      ],
+      "trusted": false
+    },
+    "optimize": {
+      "marketplace": "cc-marketplace",
+      "description": "Analyze and optimize code performance",
+      "tags": [
+        "performance"
+      ],
+      "trusted": false
+    },
+    "performance-benchmarker": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent for comprehensive performance testing, profiling, and optimization recommendations. This agent specializes in measuring speed, identifying bottlenecks, and providing actionable optimization strategies for applications. Examples:\\n\\n<example>\\nContext: Application speed testing",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "plan": {
+      "marketplace": "cc-marketplace",
+      "description": "For easy problems, start here. For harder problems, do this after Explore.",
+      "tags": [
+        "plan"
+      ],
+      "trusted": false
+    },
+    "planning-prd-agent": {
+      "marketplace": "cc-marketplace",
+      "description": "'MUST BE USED PROACTIVELY when user mentions: planning, PRD, product requirements document, project plan, roadmap, specification, requirements analysis, feature breakdown, technical spec, project estimation, milestone planning, or task decomposition. Use IMMEDIATELY when user says \"create a PRD\", \"plan this feature\", \"document requirements\", \"break down this project\", \"estimate this work\", \"create a roadmap\", \"write specifications\", or references planning/documentation needs. Expert Technical Project Manager that creates comprehensive PRDs with user stories, acceptance criteria, technical architecture, task breakdowns, and separate task assignment files for sub-agent delegation.'",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "pr-issue-resolve": {
+      "marketplace": "cc-marketplace",
+      "description": "this is to analyze the PRs and solve the requested changes in them\n",
+      "tags": [
+        "code-review",
+        "testing",
+        "refactoring",
+        "debugging",
+        "security",
+        "performance"
+      ],
+      "trusted": false
+    },
+    "pr-review": {
+      "marketplace": "cc-marketplace",
+      "description": "Reviews pull request changes to provide feedback, check for issues, and suggest improvements before merging into the main codebase.",
+      "tags": [],
+      "trusted": false
+    },
+    "prd-specialist": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to create comprehensive Product Requirements Documents (PRDs) that combine business strategy, technical architecture, and user research. Examples: <example>Context: The user needs to create a PRD for a new feature or product launch. user: \"I need to create a PRD for our new user authentication system that will support SSO and multi-factor authentication\" assistant: \"I'll use the prd-specialist agent to create a comprehensive PRD that covers the strategic foundation, technical requirements, and implementation blueprint for your authentication system.\"</example> <example>Context: The user is planning a major product initiative and needs strategic documentation. user: \"We're launching a mobile app for our e-commerce platform and need a detailed PRD to guide development\" assistant: \"Let me engage the prd-specialist agent to develop a thorough PRD that includes market analysis, user research integration, technical architecture, and implementation roadmap for your mobile app initiative.\"</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "pricing-packaging-specialist": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to optimize B2B pricing strategies, packaging models, and revenue optimization for enterprise sales. This agent specializes in value-based pricing, usage-based billing, enterprise contract negotiations, and competitive pricing analysis for SaaS platforms. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "problem-solver-specialist": {
+      "marketplace": "cc-marketplace",
+      "description": "Universal expert problem-solving agent specializing in complex debugging, mysterious runtime behavior, integration issues, and multi-layered technical challenges across any technology stack or project type. Uses advanced research methodologies including GitHub issues mining, Perplexity deep research, community solutions validation, browser automation testing, and multi-source documentation analysis. Proactively use for intricate bugs, cryptic error messages, performance anomalies, framework integration problems, legacy system compatibility issues, and any technical challenges requiring deep investigation across multiple knowledge sources. Project-agnostic and universally applicable.",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "product-sales-specialist": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to support B2B sales through product design, user research, project management, and creative RFP responses. This agent specializes in creating compelling product demonstrations, design-focused RFP sections, user experience narratives, and project management frameworks that win enterprise deals. Combines product expertise with sales enablement. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "project-curator": {
+      "marketplace": "cc-marketplace",
+      "description": "Reorganizes project structure by cleaning root clutter, creating logical folder hierarchies, and moving files to optimal locations. Tracks dependencies and fixes broken imports/paths. Use PROACTIVELY when project structure becomes unwieldy or needs architectural cleanup.",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "project-shipper": {
+      "marketplace": "cc-marketplace",
+      "description": "PROACTIVELY use this agent when approaching launch milestones, release deadlines, or go-to-market activities. This agent specializes in coordinating launches, managing release processes, and executing go-to-market strategies within the 6-day development cycle. Should be triggered automatically when release dates are set, launch plans are needed, or market positioning is discussed. Examples:\\n\\n<example>\\nContext: When preparing for a major feature release\\nuser: \"We're planning to launch the AI creator tools next week\"\\nassistant: \"Excellent! A major feature launch requires careful coordination. Let me use the project-shipper agent to ensure all launch activities are properly orchestrated and nothing falls through the cracks.\"\\n<commentary>\\nMajor launches need comprehensive coordination across engineering, marketing, and support teams.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: During release planning discussions\\nuser: \"We need to ship three updates this sprint\"\\nassistant: \"Managing multiple releases requires careful orchestration. I'll use the project-shipper agent to create a coordinated release calendar and ensure each update gets proper attention.\"\\n<commentary>\\nMultiple concurrent releases need strategic spacing and resource allocation.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: When go-to-market strategy is needed\\nuser: \"How should we position the new viral video features?\"\\nassistant: \"Positioning is crucial for feature adoption. Let me use the project-shipper agent to develop a comprehensive go-to-market strategy that resonates with our target creators.\"\\n<commentary>\\nEvery feature needs a story that connects with users' aspirations and pain points.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Post-launch monitoring\\nuser: \"The collaboration feature launched yesterday\"\\nassistant: \"Great! The critical first 48 hours determine success. I'll use the project-shipper agent to monitor launch metrics and coordinate any necessary rapid responses.\"\\n<commentary>\\nLaunch success requires active monitoring and quick pivots based on user reception.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "python-expert": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when working with Python code that requires advanced features, performance optimization, or comprehensive refactoring. Examples: <example>Context: User needs to optimize a slow Python function that processes large datasets. user: \"This function is taking too long to process our data, can you help optimize it?\" assistant: \"I'll use the python-expert agent to analyze and optimize your Python code with advanced techniques and performance profiling.\"</example> <example>Context: User wants to implement async/await patterns in their existing synchronous Python code. user: \"I need to convert this synchronous code to use async/await for better performance\" assistant: \"Let me use the python-expert agent to refactor your code with proper async/await patterns and concurrent programming techniques.\"</example> <example>Context: User needs help implementing complex Python design patterns. user: \"I want to implement a factory pattern with decorators for my API endpoints\" assistant: \"I'll use the python-expert agent to implement advanced Python patterns with decorators and proper design principles.\"</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "rapid-prototyper": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to quickly create a new application prototype, MVP, or proof-of-concept within the 6-day development cycle. This agent specializes in scaffolding projects, integrating trending features, and building functional demos rapidly. Examples:\\n\\n<example>\\nContext: Starting a new experiment or app idea\\nuser: \"Create a new app that helps people overcome phone anxiety\"\\nassistant: \"I'll help you create a phone anxiety app. Let me use the rapid-prototyper agent to scaffold this project and build an MVP.\"\\n<commentary>\\nWhen starting any new project or experiment, use the rapid-prototyper to quickly set up the foundation and core features.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Need to test a trending feature or viral concept\\nuser: \"I saw this TikTok trend about AI avatars, can we build something around that?\"\\nassistant: \"That's a great trending opportunity! I'll use the rapid-prototyper agent to quickly build a prototype app featuring AI avatars.\"\\n<commentary>\\nFor capitalizing on trends and viral content, the rapid-prototyper can quickly create testable prototypes.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Validating a business idea with minimal investment\\nuser: \"We need to test if people would pay for a subscription box curation app\"\\nassistant: \"Let's validate that idea with a quick prototype. I'll use the rapid-prototyper agent to build an MVP with basic subscription and curation features.\"\\n<commentary>\\nBusiness validation requires fast prototyping to test market fit before full investment.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Creating demo apps for stakeholder presentations\\nuser: \"We're meeting with investors next week and need to show them our vision\"\\nassistant: \"I'll help create a compelling demo. Let me use the rapid-prototyper agent to build a functional prototype that showcases your vision.\"\\n<commentary>\\nInvestor demos and stakeholder presentations benefit from working prototypes rather than just mockups.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "react-native-dev": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need expert assistance with React Native development tasks including code analysis, component creation, debugging, performance optimization, or architectural decisions. Examples: <example>Context: User is working on a React Native app and needs help with a navigation issue. user: 'My stack navigator isn't working properly when I try to navigate between screens' assistant: 'Let me use the react-native-dev agent to analyze your navigation setup and provide a solution' <commentary>Since this is a React Native specific issue, use the react-native-dev agent to provide expert guidance on navigation problems.</commentary></example> <example>Context: User wants to create a new component that follows the existing app structure. user: 'I need to create a custom button component that matches our app's design system' assistant: 'I'll use the react-native-dev agent to create a button component that aligns with your existing codebase structure and design patterns' <commentary>The user needs React Native component development that should follow existing patterns, so use the react-native-dev agent.</commentary></example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "reddit-community-builder": {
+      "marketplace": "cc-marketplace",
+      "description": "Reddit Community Builder subagent",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "refractor": {
+      "marketplace": "cc-marketplace",
+      "description": "Refactor code following best practices and design patterns",
+      "tags": [
+        "refactoring"
+      ],
+      "trusted": false
+    },
+    "sprint-prioritizer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when planning 6-day development cycles, prioritizing features, managing product roadmaps, or making trade-off decisions. This agent specializes in maximizing value delivery within tight timelines. Examples:\\n\\n<example>\\nContext: Planning the next sprint\\nuser: \"We have 50 feature requests but only 6 days\"\\nassistant: \"I'll help prioritize for maximum impact. Let me use the sprint-prioritizer agent to create a focused sprint plan that delivers the most value.\"\\n<commentary>\\nSprint planning requires balancing user needs, technical constraints, and business goals.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Making feature trade-offs\\nuser: \"Should we build AI chat or improve onboarding?\"\\nassistant: \"Let's analyze the impact of each option. I'll use the sprint-prioritizer agent to evaluate ROI and make a data-driven recommendation.\"\\n<commentary>\\nFeature prioritization requires analyzing user impact, development effort, and strategic alignment.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Mid-sprint scope changes\\nuser: \"The CEO wants us to add video calling to this sprint\"\\nassistant: \"I'll assess the impact on current commitments. Let me use the sprint-prioritizer agent to reorganize priorities while maintaining sprint goals.\"\\n<commentary>\\nScope changes require careful rebalancing to avoid sprint failure.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "studio-coach": {
+      "marketplace": "cc-marketplace",
+      "description": "PROACTIVELY use this agent when complex multi-agent tasks begin, when agents seem stuck or overwhelmed, or when the team needs motivation and coordination. This agent serves as the elite performance coach for all other agents, ensuring they operate at their highest level while maintaining composure and excellence. Should be triggered automatically at the start of challenging projects or when detecting agent confusion. Examples:\\n\\n<example>\\nContext: Starting a complex project requiring multiple agents\\nuser: \"We need to build a viral TikTok app in 2 weeks\"\\nassistant: \"This is an ambitious goal that will require our A-team! Let me bring in the studio-coach to coordinate our agents and ensure everyone performs at their peak.\"\\n<commentary>\\nComplex projects benefit from having a coach to keep all agents aligned and motivated.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: When an agent seems stuck or is producing subpar results\\nagent: \"I'm having trouble identifying the right trends...\"\\nassistant: \"Let me bring in the studio-coach to help refocus and elevate your approach.\"\\n<commentary>\\nAgents can get overwhelmed or lose focus - the coach helps them recenter and excel.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Before launching a major sprint or initiative\\nuser: \"Tomorrow we start the 6-day sprint for our biggest project yet\"\\nassistant: \"Time to rally the team! I'll have the studio-coach prepare everyone mentally and strategically for peak performance.\"\\n<commentary>\\nPre-sprint coaching ensures all agents start with clarity, confidence, and coordination.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: When celebrating wins or learning from failures\\nuser: \"Our app just hit #1 on the App Store!\"\\nassistant: \"Incredible achievement! Let me bring in the studio-coach to celebrate with the team and capture what made this success possible.\"\\n<commentary>\\nThe coach helps institutionalize wins and extract learnings from both successes and failures.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "studio-producer": {
+      "marketplace": "cc-marketplace",
+      "description": "PROACTIVELY use this agent when coordinating across multiple teams, allocating resources, or optimizing studio workflows. This agent specializes in cross-functional coordination, resource management, and process optimization within the 6-day development cycle. Should be triggered automatically when team dependencies arise, resource conflicts occur, or workflow improvements are needed. Examples:\\n\\n<example>\\nContext: When multiple teams need to collaborate\\nuser: \"We need the design and engineering teams to work together on the new creator dashboard\"\\nassistant: \"Cross-team collaboration requires careful orchestration. Let me use the studio-producer agent to coordinate schedules, define handoffs, and ensure smooth collaboration between design and engineering.\"\\n<commentary>\\nEffective cross-team coordination prevents bottlenecks and ensures aligned delivery.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: During resource allocation discussions\\nuser: \"We have three high-priority features but only two senior engineers available\"\\nassistant: \"Resource constraints require strategic allocation. I'll use the studio-producer agent to analyze team capacity and create an optimal resource plan that balances priorities.\"\\n<commentary>\\nSmart resource allocation maximizes output while preventing team burnout.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: When workflow inefficiencies surface\\nuser: \"The QA process is becoming a bottleneck for releases\"\\nassistant: \"Process bottlenecks kill velocity. Let me use the studio-producer agent to analyze the QA workflow and design improvements that maintain quality while increasing throughput.\"\\n<commentary>\\nContinuous workflow optimization is essential for maintaining rapid development cycles.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Sprint planning and coordination\\nuser: \"We're starting a new 6-day cycle next Monday\"\\nassistant: \"New cycles need comprehensive planning. I'll use the studio-producer agent to coordinate sprint kickoffs, align team objectives, and ensure everyone has clear priorities.\"\\n<commentary>\\nWell-coordinated sprint starts set the tone for successful 6-day cycles.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "sugar": {
+      "marketplace": "cc-marketplace",
+      "description": "Sugar 🍰 - AI-powered autonomous development system for complex, multi-step development tasks",
+      "tags": [
+        "autonomous",
+        "development",
+        "ai",
+        "task-management",
+        "automation",
+        "agents",
+        "enterprise"
+      ],
+      "trusted": false
+    },
+    "support-responder": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when handling customer support inquiries, creating support documentation, setting up automated responses, or analyzing support patterns. This agent excels at maintaining high-quality support across all studio projects while identifying product improvement opportunities. Examples:\\n\\n<example>\\nContext: Setting up support for a new app launch",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "technical-sales-engineer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to bridge technical and sales requirements for B2B enterprise deals. This agent specializes in technical demos, POC development, RFP responses, solution architecture for sales, and technical objection handling. Handles complex enterprise sales cycles with technical evaluation phases. Examples:",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "test-file": {
+      "marketplace": "cc-marketplace",
+      "description": "Generate comprehensive tests for a specific file",
+      "tags": [
+        "testing"
+      ],
+      "trusted": false
+    },
+    "test-results-analyzer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent for analyzing test results, synthesizing test data, identifying trends, and generating quality metrics reports. This agent specializes in turning raw test data into actionable insights that drive quality improvements. Examples:\\n\\n<example>\\nContext: Analyzing test suite results",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "test-writer-fixer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when code changes have been made and you need to write new tests, run existing tests, analyze failures, and fix them while maintaining test integrity. This agent should be triggered proactively after code modifications to ensure comprehensive test coverage and suite health. Examples:\\n\\n<example>\\nContext: The user has just implemented a new feature or modified existing code.\\nuser: \"I've updated the user authentication logic to support OAuth\"\\nassistant: \"I've successfully updated the authentication logic. Now let me run the test-writer-fixer agent to ensure all tests pass with these changes.\"\\n<commentary>\\nSince code changes were made, use the Task tool to launch the test-writer-fixer agent to run relevant tests and fix any failures.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user has refactored a module or changed function signatures.\\nuser: \"Please refactor this payment processing module to use async/await\"\\nassistant: \"I've completed the refactoring to use async/await throughout the payment module.\"\\n<function call omitted for brevity>\\nassistant: \"Now I'll use the test-writer-fixer agent to run the tests and fix any issues caused by the refactoring.\"\\n<commentary>\\nAfter refactoring code, proactively use the test-writer-fixer agent to ensure tests still pass.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user has fixed a bug or made a critical change.\\nuser: \"Fix the race condition in the data synchronization service\"\\nassistant: \"I've identified and fixed the race condition by implementing proper locking mechanisms.\"\\n<function call omitted for brevity>\\nassistant: \"Let me run the test-writer-fixer agent to verify the fix doesn't break existing functionality.\"\\n<commentary>\\nAfter bug fixes, use the test-writer-fixer agent to ensure the fix works and doesn't introduce regressions.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Code lacks test coverage for critical functionality.\\nuser: \"Our payment processing module has no tests\"\\nassistant: \"That's a critical gap. Let me use the test-writer-fixer agent to create comprehensive tests for the payment module including edge cases and error scenarios.\"\\n<commentary>\\nCritical modules without tests are high-risk areas that need immediate test coverage.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: After implementing a new feature that needs tests.\\nuser: \"I've added the social sharing functionality\"\\nassistant: \"Great! The social sharing is implemented. Now let me use the test-writer-fixer agent to write tests that ensure this feature works correctly across different platforms.\"\\n<commentary>\\nNew features should always include comprehensive test coverage from the start.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "tiktok-strategist": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to create TikTok marketing strategies, develop viral content ideas, plan TikTok campaigns, or optimize for TikTok's algorithm. This agent specializes in creating shareable moments and leveraging TikTok trends for app growth. Examples:\\n\\n<example>\\nContext: Launching a new app and need TikTok strategy\\nuser: \"We're launching our phone anxiety app next week. How should we approach TikTok?\"\\nassistant: \"TikTok will be crucial for your launch. Let me use the tiktok-strategist agent to create a comprehensive TikTok marketing strategy for your phone anxiety app.\"\\n<commentary>\\nNew app launches benefit from TikTok's viral potential and young user base.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Creating viral content for an existing app\\nuser: \"Our meditation app needs more downloads. What kind of TikTok content should we make?\"\\nassistant: \"I'll help you create viral TikTok content ideas. Let me use the tiktok-strategist agent to develop content that showcases your app in trending formats.\"\\n<commentary>\\nExisting apps can boost downloads through strategic TikTok content that fits platform culture.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Identifying TikTok influencers for partnerships\\nuser: \"Should we work with TikTok creators to promote our app?\"\\nassistant: \"Creator partnerships can be very effective. Let me use the tiktok-strategist agent to identify the right creators and collaboration strategies for your app.\"\\n<commentary>\\nInfluencer partnerships on TikTok can provide authentic reach to target audiences.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Optimizing app features for TikTok sharing\\nuser: \"How can we make our app more TikTok-friendly?\"\\nassistant: \"Making your app TikTok-native is smart. I'll use the tiktok-strategist agent to identify features and moments in your app that users would want to share on TikTok.\"\\n<commentary>\\nApps with built-in TikTok-worthy moments see higher organic growth through user-generated content.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "tool-evaluator": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when evaluating new development tools, frameworks, or services for the studio. This agent specializes in rapid tool assessment, comparative analysis, and making recommendations that align with the 6-day development cycle philosophy. Examples:\\n\\n<example>\\nContext: Considering a new framework or library",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "trend-researcher": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when you need to identify market opportunities, analyze trending topics, research viral content, or understand emerging user behaviors. This agent specializes in finding product opportunities from TikTok trends, App Store patterns, and social media virality. Examples:\\n\\n<example>\\nContext: Looking for new app ideas based on current trends\\nuser: \"What's trending on TikTok that we could build an app around?\"\\nassistant: \"I'll research current TikTok trends that have app potential. Let me use the trend-researcher agent to analyze viral content and identify opportunities.\"\\n<commentary>\\nWhen seeking new product ideas, the trend-researcher can identify viral trends with commercial potential.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Validating a product concept against market trends\\nuser: \"Is there market demand for an app that helps introverts network?\"\\nassistant: \"Let me validate this concept against current market trends. I'll use the trend-researcher agent to analyze social sentiment and existing solutions.\"\\n<commentary>\\nBefore building, validate ideas against real market signals and user behavior patterns.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Competitive analysis for a new feature\\nuser: \"Our competitor just added AI avatars. Should we care?\"\\nassistant: \"I'll analyze the market impact and user reception of AI avatars. Let me use the trend-researcher agent to assess this feature's traction.\"\\n<commentary>\\nCompetitive features need trend analysis to determine if they're fleeting or fundamental.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Finding viral mechanics for existing apps\\nuser: \"How can we make our habit tracker more shareable?\"\\nassistant: \"I'll research viral sharing mechanics in successful apps. Let me use the trend-researcher agent to identify patterns we can adapt.\"\\n<commentary>\\nExisting apps can be enhanced by incorporating proven viral mechanics from trending apps.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "twitter-engager": {
+      "marketplace": "cc-marketplace",
+      "description": "Twitter Engager subagent",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "ui-designer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when creating user interfaces, designing components, building design systems, or improving visual aesthetics. This agent specializes in creating beautiful, functional interfaces that can be implemented quickly within 6-day sprints. Examples:\\n\\n<example>\\nContext: Starting a new app or feature design",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "ultrathink": {
+      "marketplace": "cc-marketplace",
+      "description": "Use /ultrathink <TASK_DESCRIPTION> to launch a Coordinator Agent that directs four specialist sub-agents—Architect, Research, Coder, and Tester—to analyze, design, implement, and validate your coding task. The process breaks the task into clear steps, gathers insights, and synthesizes a cohesive solution with actionable outputs. Relevant files can be referenced ad-hoc using @ filename syntax.",
+      "tags": [
+        "plan",
+        "explore",
+        "refactoring",
+        "testing",
+        "code-review",
+        "workflow",
+        "debugging"
+      ],
+      "trusted": false
+    },
+    "unit-test-generator": {
+      "marketplace": "cc-marketplace",
+      "description": "Expert Flutter/Dart unit test specialist that systematically improves test coverage using automated workflows with strict validation, git management, and Aurigo corporate standards. Use for comprehensive test suite creation and coverage improvement.",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "update-branch-name": {
+      "marketplace": "cc-marketplace",
+      "description": "Updates branch names with proper prefixes and formats, enforcing naming conventions, supporting semantic prefixes, and managing remote branch updates.",
+      "tags": [],
+      "trusted": false
+    },
+    "update-claudemd": {
+      "marketplace": "cc-marketplace",
+      "description": "Automatically update CLAUDE.md file based on recent code changes",
+      "tags": [
+        "code-review"
+      ],
+      "trusted": false
+    },
+    "ux-researcher": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when conducting user research, analyzing user behavior, creating journey maps, or validating design decisions through testing. This agent specializes in understanding user needs, pain points, and behaviors to inform product decisions within rapid development cycles. Examples:\\n\\n<example>\\nContext: Understanding user needs for a new feature",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "vision-specialist": {
+      "marketplace": "cc-marketplace",
+      "description": "Expert in vision models, OCR systems, barcode detection, and visual AI. Stays current with latest models (GPT-4V, Claude Vision, Mistral-OCR, etc.), optimization techniques, and specialized libraries. Use PROACTIVELY for image processing, document analysis, or visual AI tasks.",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "visual-storyteller": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent when creating visual narratives, designing infographics, building presentations, or communicating complex ideas through imagery. This agent specializes in transforming data and concepts into compelling visual stories that engage users and stakeholders. Examples:\\n\\n<example>\\nContext: Creating app onboarding illustrations",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "web-dev": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent for expert assistance with web development tasks using React, Next.js, NestJS, and other modern web frameworks with TypeScript and Tailwind CSS. This includes code analysis, component creation, debugging, performance optimization, and architectural decisions. Examples: <example>Context: User is building a Next.js app and encounters a routing issue. user: 'My dynamic routes in Next.js are not rendering correctly' assistant: 'Let me use the web-dev agent to analyze your Next.js routing setup and provide a solution' <commentary>This is a Next.js-specific routing issue, so the web-dev agent will provide targeted guidance.</commentary></example> <example>Context: User needs a reusable React component with Tailwind CSS. user: 'I need a card component that matches my app's Tailwind-based design system' assistant: 'I'll use the web-dev agent to create a TypeScript-based React card component styled with Tailwind CSS, following your app's design patterns' <commentary>The user requires a component that aligns with their Tailwind CSS design system, so the web-dev agent ensures compatibility.</commentary></example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "whimsy-injector": {
+      "marketplace": "cc-marketplace",
+      "description": "PROACTIVELY use this agent after any UI/UX changes to ensure delightful, playful elements are incorporated. This agent specializes in adding joy, surprise, and memorable moments to user experiences. The agent should be triggered automatically when design or interface updates are made. Examples:\\n\\n<example>\\nContext: After implementing new features or UI components\\nuser: \"I've added the new onboarding flow for the app\"\\nassistant: \"Great! I've implemented the onboarding flow. Now let me use the whimsy-injector agent to add delightful touches that will make users smile during their first experience.\"\\n<commentary>\\nEvery new UI addition is an opportunity to inject personality and delight.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: When error states or empty states are created\\nuser: \"Set up error handling for the payment flow\"\\nassistant: \"I've implemented the error handling. Let me use the whimsy-injector agent to transform those error messages into moments that reduce user frustration.\"\\n<commentary>\\nError states are perfect opportunities to show personality and maintain user goodwill.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: After creating standard UI components\\nuser: \"Build a loading spinner for the data fetch\"\\nassistant: \"I've created the basic loading functionality. Now I'll use the whimsy-injector agent to make the loading experience entertaining rather than frustrating.\"\\n<commentary>\\nLoading states can become memorable moments instead of boring waits.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: When reviewing completed features\\nuser: \"The user profile page is done\"\\nassistant: \"Perfect! The profile page is complete. Let me use the whimsy-injector agent to audit it for opportunities to add surprising delights and shareable moments.\"\\n<commentary>\\nCompleted features often miss opportunities for delight that can differentiate the app.\\n</commentary>\\n</example>",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
+    },
+    "workflow-optimizer": {
+      "marketplace": "cc-marketplace",
+      "description": "Use this agent for optimizing human-agent collaboration workflows and analyzing workflow efficiency. This agent specializes in identifying bottlenecks, streamlining processes, and ensuring smooth handoffs between human creativity and AI assistance. Examples:\\n\\n<example>\\nContext: Improving development workflow efficiency",
+      "tags": [
+        "subagent"
+      ],
+      "trusted": false
     }
   },
   "recommendations": {
-    "nextjs":      ["typescript-lsp", "commit-commands", "pr-review-toolkit", "github", "code-review"],
-    "react":       ["typescript-lsp", "commit-commands", "frontend-design", "code-review"],
-    "vue":         ["typescript-lsp", "commit-commands", "frontend-design"],
-    "nuxt":        ["typescript-lsp", "commit-commands", "frontend-design"],
-    "svelte":      ["typescript-lsp", "commit-commands", "frontend-design"],
-    "typescript":  ["typescript-lsp", "commit-commands", "code-review"],
-    "node":        ["commit-commands", "code-review"],
-    "express":     ["commit-commands", "code-review", "security-guidance"],
-    "fastify":     ["commit-commands", "code-review"],
-    "nestjs":      ["typescript-lsp", "commit-commands", "code-review"],
-    "prisma":      ["code-review", "security-guidance"],
-    "python":      ["pyright-lsp", "commit-commands", "code-review"],
-    "fastapi":     ["pyright-lsp", "commit-commands", "code-review", "security-guidance"],
-    "django":      ["pyright-lsp", "commit-commands", "security-guidance"],
-    "flask":       ["pyright-lsp", "commit-commands"],
-    "go":          ["gopls-lsp", "commit-commands", "code-review"],
-    "rust":        ["rust-analyzer-lsp", "commit-commands", "code-review"],
-    "github-ci":   ["github", "commit-commands"],
-    "docker":      ["security-guidance", "commit-commands"],
-    "plugin-dev":  ["plugin-dev", "commit-commands", "code-review"]
+    "nextjs": [
+      "typescript-lsp",
+      "commit-commands",
+      "pr-review-toolkit",
+      "github",
+      "code-review"
+    ],
+    "react": [
+      "typescript-lsp",
+      "commit-commands",
+      "frontend-design",
+      "code-review"
+    ],
+    "vue": [
+      "typescript-lsp",
+      "commit-commands",
+      "frontend-design"
+    ],
+    "nuxt": [
+      "typescript-lsp",
+      "commit-commands",
+      "frontend-design"
+    ],
+    "svelte": [
+      "typescript-lsp",
+      "commit-commands",
+      "frontend-design"
+    ],
+    "typescript": [
+      "typescript-lsp",
+      "commit-commands",
+      "code-review"
+    ],
+    "node": [
+      "commit-commands",
+      "code-review"
+    ],
+    "express": [
+      "commit-commands",
+      "code-review",
+      "security-guidance"
+    ],
+    "fastify": [
+      "commit-commands",
+      "code-review"
+    ],
+    "nestjs": [
+      "typescript-lsp",
+      "commit-commands",
+      "code-review"
+    ],
+    "prisma": [
+      "code-review",
+      "security-guidance"
+    ],
+    "python": [
+      "pyright-lsp",
+      "commit-commands",
+      "code-review"
+    ],
+    "fastapi": [
+      "pyright-lsp",
+      "commit-commands",
+      "code-review",
+      "security-guidance"
+    ],
+    "django": [
+      "pyright-lsp",
+      "commit-commands",
+      "security-guidance"
+    ],
+    "flask": [
+      "pyright-lsp",
+      "commit-commands"
+    ],
+    "go": [
+      "gopls-lsp",
+      "commit-commands",
+      "code-review"
+    ],
+    "rust": [
+      "rust-analyzer-lsp",
+      "commit-commands",
+      "code-review"
+    ],
+    "github-ci": [
+      "github",
+      "commit-commands"
+    ],
+    "docker": [
+      "security-guidance",
+      "commit-commands"
+    ],
+    "plugin-dev": [
+      "plugin-dev",
+      "commit-commands",
+      "code-review"
+    ]
   }
 }
