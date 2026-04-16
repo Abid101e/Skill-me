@@ -48,3 +48,26 @@ body::before {
 .card-grid > *:nth-child(7)  { animation-delay: 0.35s; }
 .card-grid > *:nth-child(8)  { animation-delay: 0.40s; }
 .card-grid > *:nth-child(9)  { animation-delay: 0.45s; }
+
+/* dot-grid drift — each card offset so they ripple in rhythm */
+@keyframes dotDrift {
+  0%   { background-position: 0px 0px, 0% 0%; }
+  100% { background-position: 18px 18px, 0% 0%; }
+}
+
+.plugin-card { animation: dotDrift 7s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .plugin-card { animation: none; }
+  .fade-up     { animation: none; opacity: 1; }
+}
+
+.card-grid > *:nth-child(1)  .plugin-card { animation-delay: 0s; }
+.card-grid > *:nth-child(2)  .plugin-card { animation-delay: -0.8s; }
+.card-grid > *:nth-child(3)  .plugin-card { animation-delay: -1.6s; }
+.card-grid > *:nth-child(4)  .plugin-card { animation-delay: -2.4s; }
+.card-grid > *:nth-child(5)  .plugin-card { animation-delay: -3.2s; }
+.card-grid > *:nth-child(6)  .plugin-card { animation-delay: -4.0s; }
+.card-grid > *:nth-child(7)  .plugin-card { animation-delay: -4.8s; }
+.card-grid > *:nth-child(8)  .plugin-card { animation-delay: -5.6s; }
+.card-grid > *:nth-child(9)  .plugin-card { animation-delay: -6.4s; }

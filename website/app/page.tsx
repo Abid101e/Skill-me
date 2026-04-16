@@ -1,6 +1,7 @@
 import { getIndexData, getFeaturedPlugins, getCommunityPlugins, getStats } from '@/lib/data';
 import PluginCard from '@/components/PluginCard';
 import CopyCommand from '@/components/CopyCommand';
+import Terminal from '@/components/Terminal';
 
 export default async function Home() {
   let data;
@@ -35,25 +36,24 @@ export default async function Home() {
             skill<span style={{ color: '#10b981' }}>me</span>
           </span>
           <div className="flex items-center gap-3 sm:gap-4">
+            <a href="/plugins" className="text-sm text-zinc-400 transition-colors hover:text-white">
+              Plugins
+            </a>
+            <a href="/stacks" className="text-sm text-zinc-400 transition-colors hover:text-white">
+              Stacks
+            </a>
             <a
               href="https://github.com/Abid101e/Skill-me"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-zinc-400 transition-colors hover:text-white"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.npmjs.com/package/skillme"
-              target="_blank"
-              rel="noopener noreferrer"
               className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-zinc-300 transition-all hover:border-emerald-500/50 hover:text-white sm:px-4"
             >
-              npm
+              GitHub
             </a>
           </div>
         </nav>
 
+        <main>
         {/* ── HERO ── */}
         <section className="mx-auto max-w-4xl px-4 pb-20 pt-16 text-center sm:px-6 sm:pb-24 sm:pt-20 md:px-12 md:pt-28">
 
@@ -119,6 +119,41 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* ── TERMINAL DEMO ── */}
+        <section className="mx-auto max-w-2xl px-4 pb-20 sm:px-6 sm:pb-24 md:px-12">
+          <p className="mb-6 text-center font-mono text-xs uppercase tracking-widest text-zinc-600">
+            See it in action
+          </p>
+          <Terminal />
+        </section>
+
+        {/* ── BROWSE BY STACK CTA ── */}
+        <section className="mx-auto max-w-4xl px-4 pb-20 sm:px-6 sm:pb-24 md:px-12">
+          <div className="relative overflow-hidden rounded-2xl border border-white/8 bg-white/3 p-8 sm:p-10 text-center">
+            <div
+              className="pointer-events-none absolute inset-0 opacity-20"
+              style={{ background: 'radial-gradient(ellipse at 60% 0%, #6366f1 0%, transparent 60%)' }}
+            />
+            <div className="relative">
+              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-violet-400">
+                New
+              </p>
+              <h2 className="mb-3 text-2xl font-bold text-white" style={{ fontFamily: 'Syne, sans-serif' }}>
+                Browse by Stack
+              </h2>
+              <p className="mb-6 text-sm text-zinc-400">
+                React, Python, Go, Docker and more — see exactly which plugins are recommended for your tech.
+              </p>
+              <a
+                href="/stacks"
+                className="inline-flex items-center gap-2 rounded-lg border border-violet-500/30 bg-violet-500/10 px-5 py-2.5 font-mono text-sm text-violet-300 transition-all hover:border-violet-500/60 hover:bg-violet-500/20 hover:text-white"
+              >
+                Explore stacks →
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* ── HOW IT WORKS ── */}
         <section className="mx-auto max-w-4xl px-4 pb-20 sm:px-6 sm:pb-24 md:px-12">
           <h2
@@ -173,22 +208,25 @@ export default async function Home() {
                 Official, trusted plugins recommended for most projects
               </p>
             </div>
-            <span className="hidden font-mono text-xs text-zinc-600 sm:block">
-              {stats.plugins}+ total in index
-            </span>
+            <a
+              href="/plugins"
+              className="hidden font-mono text-xs text-zinc-500 transition-colors hover:text-emerald-400 sm:block"
+            >
+              View all {stats.plugins}+ →
+            </a>
           </div>
 
           {featured.length > 0 ? (
             <div className="card-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map(plugin => (
-                <div key={plugin.name} className="fade-up">
+                <div key={plugin.name} className="fade-up h-full">
                   <PluginCard plugin={plugin} />
                 </div>
               ))}
             </div>
           ) : (
             <p className="text-center text-sm text-zinc-600">
-              Loading plugins...
+              Unable to load plugins — try refreshing.
             </p>
           )}
         </section>
@@ -208,13 +246,16 @@ export default async function Home() {
                   Popular plugins from the community marketplace
                 </p>
               </div>
-              <span className="hidden font-mono text-xs text-zinc-600 sm:block">
-                {stats.plugins - stats.trusted}+ community plugins
-              </span>
+              <a
+                href="/plugins?filter=community"
+                className="hidden font-mono text-xs text-zinc-500 transition-colors hover:text-emerald-400 sm:block"
+              >
+                Browse all {stats.plugins - stats.trusted}+ →
+              </a>
             </div>
             <div className="card-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {community.map(plugin => (
-                <div key={plugin.name} className="fade-up">
+                <div key={plugin.name} className="fade-up h-full">
                   <PluginCard plugin={plugin} />
                 </div>
               ))}
@@ -222,6 +263,7 @@ export default async function Home() {
           </section>
         )}
 
+        </main>
         {/* ── FOOTER ── */}
         <footer className="border-t border-white/6 px-4 py-8 sm:px-6 md:px-12">
           <div className="mx-auto flex max-w-6xl items-center justify-between">
