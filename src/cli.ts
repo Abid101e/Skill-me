@@ -7,6 +7,8 @@ import { runList } from './commands/list.js';
 import { runUpdate } from './commands/update.js';
 import { runUninstall } from './commands/uninstall.js';
 import { runInfo } from './commands/info.js';
+import { runDoctor } from './commands/doctor.js';
+import { runUpgrade } from './commands/upgrade.js';
 import { validateScope, validatePluginName, validateMarketplaceId, type Scope } from './installer/index.js';
 import { SkillmeError } from './utils/errors.js';
 import { logger } from './utils/logger.js';
@@ -128,10 +130,24 @@ program
   });
 
 program
+  .command('upgrade')
+  .description('Re-install all plugins to get the latest versions')
+  .action(async () => {
+    await runUpgrade();
+  });
+
+program
   .command('info <name>')
   .description('Show details for a plugin')
   .action(async (name: string) => {
     await runInfo(guardPluginName(name));
+  });
+
+program
+  .command('doctor')
+  .description('Check your environment and installed plugins for problems')
+  .action(async () => {
+    await runDoctor();
   });
 
 program

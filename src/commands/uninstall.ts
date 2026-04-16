@@ -74,6 +74,15 @@ export async function runUninstall(name?: string) {
         process.exit(1);
       }
       target = match;
+    } else if (!process.stdout.isTTY) {
+      log.warn('No interactive terminal detected.');
+      log.info('Run ' + pc.cyan('skillme uninstall <name>') + ' with a plugin name. Installed plugins:');
+      for (const i of installed) {
+        const displayName = i.key.split('@')[0];
+        console.log(`  ${pc.dim('·')} ${pc.bold(displayName)} ${pc.dim(`(${i.scope})`)}`);
+      }
+      outro('');
+      return;
     } else {
       const choice = await select({
         message: 'Select a plugin to uninstall:',

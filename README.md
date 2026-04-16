@@ -35,9 +35,9 @@ skillme init
 Detecting your project stack...
 
 Found:
-  → Next.js 14
-  → TypeScript (strict)
-  → Prisma + PostgreSQL
+  → Next.js
+  → TypeScript
+  → Prisma
   → GitHub Actions
 
 Recommended plugins for your stack:
@@ -73,7 +73,7 @@ skillme init --scope project   # share with your team via git
 ```
 
 ### `skillme search <query>`
-Searches across all known marketplaces.
+Searches across all known marketplaces. Select a result to install immediately.
 
 ```bash
 skillme search "git workflow"
@@ -85,35 +85,58 @@ Installs a specific plugin by name.
 
 ```bash
 skillme install commit-commands
-skillme install github
+skillme install github --scope project
 ```
 
-### `skillme uninstall <name>`
-Removes an installed plugin.
+### `skillme info <name>`
+Shows details for a plugin — description, tags, marketplace, required binaries, and recommended stacks.
 
 ```bash
-skillme uninstall commit-commands
+skillme info commit-commands
+skillme info typescript-lsp
 ```
 
 ### `skillme list`
-Shows all installed plugins grouped by scope.
+Shows all installed plugins grouped by scope, with descriptions.
 
 ```bash
 skillme list
 ```
 
+### `skillme upgrade`
+Re-installs all installed plugins to pick up the latest versions.
+
+```bash
+skillme upgrade
+```
+
 ### `skillme update`
-Refreshes the marketplace index and checks for updates.
+Refreshes the marketplace index from GitHub.
 
 ```bash
 skillme update
+```
+
+### `skillme doctor`
+Checks your environment for problems — Claude CLI, Node version, plugin binary requirements, and settings file integrity.
+
+```bash
+skillme doctor
+```
+
+### `skillme uninstall [name]`
+Removes an installed plugin. Interactive picker if no name is given.
+
+```bash
+skillme uninstall commit-commands
+skillme uninstall   # interactive
 ```
 
 ---
 
 ## Install scopes
 
-Every command accepts `--scope` to control where the plugin is saved:
+Every install command accepts `--scope` to control where the plugin is saved:
 
 | Scope | File | Use case |
 |---|---|---|
@@ -129,17 +152,17 @@ skillme init --scope project   # recommended for teams
 
 ## Supported stacks
 
-20 stacks detected automatically from your project files:
+30+ stacks detected automatically from your project files:
 
 | Category | Stacks |
 |---|---|
 | Frontend | Next.js, React, Vue, Nuxt, Svelte |
-| Backend | Node.js, Express, Fastify, NestJS, FastAPI, Django, Flask |
-| Language | TypeScript, Python, Go, Rust |
+| Backend | Node.js, Express, Fastify, NestJS, FastAPI, Django, Flask, Spring, Laravel, Rails, Gin, Echo, Fiber, Actix, Axum |
+| Language | TypeScript, Python, Go, Rust, Java, C#, Ruby, PHP, Dart/Flutter, Kotlin, Swift |
 | Database | Prisma |
-| DevOps | GitHub CI, Docker |
+| DevOps | GitHub Actions, Docker |
 
-Detection reads `package.json`, `go.mod`, `Cargo.toml`, `requirements.txt`, `pyproject.toml`, `Dockerfile`, and `.github/workflows/`.
+Detection reads `package.json`, `go.mod`, `Cargo.toml`, `requirements.txt`, `pyproject.toml`, `pubspec.yaml`, `.csproj`, `pom.xml`, `build.gradle`, `Gemfile`, `composer.json`, `Dockerfile`, `.github/workflows/`, and `README.md` (as a fallback).
 
 ---
 

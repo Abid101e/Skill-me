@@ -61,7 +61,7 @@ export default async function Home() {
           <div className="fade-up fade-up-1 mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/8 px-4 py-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span className="font-mono text-xs text-emerald-400">
-              v0.1.1 · {stats.plugins}+ plugins live
+              v0.2.0 · {stats.plugins}+ plugins live
             </span>
           </div>
 

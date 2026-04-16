@@ -63,6 +63,16 @@ export async function runInit(options: { scope?: Scope }) {
       return;
     }
 
+    if (!process.stdout.isTTY) {
+      log.warn('No interactive terminal detected.');
+      log.info(
+        'Run ' + pc.cyan('skillme init') + ' directly in your terminal, or install individually:\n' +
+        recommendations.map(p => `  ${pc.cyan(`skillme install ${p.name}`)}`).join('\n')
+      );
+      outro('');
+      return;
+    }
+
     const selected = await multiselect({
       message: 'Recommended plugins for your stack (space to toggle, enter to install):',
       options: recommendations.map(p => ({

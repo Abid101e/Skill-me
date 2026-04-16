@@ -1487,6 +1487,66 @@
       "plugin-dev",
       "commit-commands",
       "code-review"
+    ],
+    "csharp": [
+      "csharp-lsp",
+      "commit-commands",
+      "code-review"
+    ],
+    "aspnet": [
+      "csharp-lsp",
+      "commit-commands",
+      "security-guidance"
+    ],
+    "java": [
+      "jdtls-lsp",
+      "commit-commands",
+      "code-review"
+    ],
+    "spring": [
+      "jdtls-lsp",
+      "commit-commands",
+      "security-guidance"
+    ],
+    "ruby": [
+      "ruby-lsp",
+      "commit-commands",
+      "code-review"
+    ],
+    "rails": [
+      "ruby-lsp",
+      "commit-commands",
+      "security-guidance"
+    ],
+    "php": [
+      "php-lsp",
+      "commit-commands",
+      "code-review"
+    ],
+    "laravel": [
+      "php-lsp",
+      "laravel-boost",
+      "commit-commands",
+      "security-guidance"
+    ],
+    "kotlin": [
+      "kotlin-lsp",
+      "commit-commands",
+      "code-review"
+    ],
+    "swift": [
+      "swift-lsp",
+      "commit-commands",
+      "code-review"
+    ],
+    "dart": [
+      "commit-commands",
+      "code-review"
+    ],
+    "flutter": [
+      "commit-commands",
+      "code-review",
+      "flutter-mobile-app-dev"
     ]
   }
 }

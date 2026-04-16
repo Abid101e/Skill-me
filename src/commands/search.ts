@@ -33,17 +33,34 @@ export async function runSearch(query: string, options: { scope?: Scope }) {
       return;
     }
 
+    if (!process.stdout.isTTY) {
+      log.info('Results (run ' + pc.cyan('skillme install <name>') + ' to install):');
+      for (const p of results.slice(0, 10)) {
+        const desc = p.description.split('\n')[0].replace(/[#*`>_~]/g, '').trim().slice(0, 80);
+        console.log(
+          `  ${pc.bold(p.name)}  ` +
+          (p.trusted ? pc.green('[official]') : pc.yellow('[community]')) +
+          `\n    ${pc.dim(desc)}`
+        );
+      }
+      outro('');
+      return;
+    }
+
     const choice = await select({
       message: 'Select a plugin to install (or press Esc to exit):',
-      options: results.map((p, i) => ({
-        value: p.name,
-        label:
-          `${pc.bold(p.name)}  ` +
-          (p.trusted ? pc.green('[official]') : pc.yellow('[community]')) +
-          `\n    ${pc.dim(p.description)}` +
-          (p.requiresBinary ? pc.dim(`\n    requires: ${p.requiresBinary}`) : ''),
-        hint: String(i + 1),
-      })),
+      options: results.map((p, i) => {
+        const desc = p.description.split('\n')[0].replace(/[#*`>_~]/g, '').trim().slice(0, 72);
+        return {
+          value: p.name,
+          label:
+            `${pc.bold(p.name)}  ` +
+            (p.trusted ? pc.green('[official]') : pc.yellow('[community]')) +
+            `\n    ${pc.dim(desc)}` +
+            (p.requiresBinary ? pc.dim(`\n    requires: ${p.requiresBinary}`) : ''),
+          hint: String(i + 1),
+        };
+      }),
     });
 
     if (isCancel(choice)) {
