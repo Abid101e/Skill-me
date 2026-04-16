@@ -1,4 +1,5 @@
 import { Command } from 'commander';
+import { version } from '../package.json';
 import { runInit } from './commands/init.js';
 import { runSearch } from './commands/search.js';
 import { runInstall } from './commands/install.js';
@@ -81,7 +82,7 @@ const program = new Command();
 program
   .name('skillme')
   .description('The missing package manager for Claude Code plugins')
-  .version('0.2.0');
+  .version(version);
 
 program
   .command('init')

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "The missing package manager for Claude Code plugins",
   "bin": {
-    "skillme": "./dist/cli.js"
+    "skillme": "dist/cli.js"
   },
   "files": [
     "dist",
