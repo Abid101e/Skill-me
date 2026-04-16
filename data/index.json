@@ -1,0 +1,104 @@
+{
+  "version": "1.0.0",
+  "marketplaces": [
+    {
+      "id": "claude-plugins-official",
+      "repo": "anthropics/claude-plugins-official",
+      "trusted": true,
+      "description": "Official Anthropic-maintained plugins"
+    }
+  ],
+  "plugins": {
+    "typescript-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Real-time TypeScript type errors and go-to-definition",
+      "trusted": true,
+      "requiresBinary": "typescript-language-server"
+    },
+    "commit-commands": {
+      "marketplace": "claude-plugins-official",
+      "description": "Git commit, push, and PR creation workflow",
+      "trusted": true
+    },
+    "pr-review-toolkit": {
+      "marketplace": "claude-plugins-official",
+      "description": "Specialized agents for reviewing pull requests",
+      "trusted": true
+    },
+    "github": {
+      "marketplace": "claude-plugins-official",
+      "description": "GitHub integration for issues, PRs, and repositories",
+      "trusted": true
+    },
+    "code-review": {
+      "marketplace": "claude-plugins-official",
+      "description": "Automated code review skill",
+      "trusted": true
+    },
+    "code-simplifier": {
+      "marketplace": "claude-plugins-official",
+      "description": "Simplify and clean up code for clarity and maintainability",
+      "trusted": true
+    },
+    "frontend-design": {
+      "marketplace": "claude-plugins-official",
+      "description": "Frontend design and UI component skills",
+      "trusted": true
+    },
+    "security-guidance": {
+      "marketplace": "claude-plugins-official",
+      "description": "Security best practices and vulnerability detection",
+      "trusted": true
+    },
+    "pyright-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Real-time Python type errors and go-to-definition",
+      "trusted": true,
+      "requiresBinary": "pyright-langserver"
+    },
+    "gopls-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Real-time Go type errors and code navigation",
+      "trusted": true,
+      "requiresBinary": "gopls"
+    },
+    "rust-analyzer-lsp": {
+      "marketplace": "claude-plugins-official",
+      "description": "Real-time Rust type errors and code navigation",
+      "trusted": true,
+      "requiresBinary": "rust-analyzer"
+    },
+    "plugin-dev": {
+      "marketplace": "claude-plugins-official",
+      "description": "Toolkit for creating Claude Code plugins and skills",
+      "trusted": true
+    },
+    "hookify": {
+      "marketplace": "claude-plugins-official",
+      "description": "Automate Claude Code behaviors with event hooks",
+      "trusted": true
+    }
+  },
+  "recommendations": {
+    "nextjs":      ["typescript-lsp", "commit-commands", "pr-review-toolkit", "github", "code-review"],
+    "react":       ["typescript-lsp", "commit-commands", "frontend-design", "code-review"],
+    "vue":         ["typescript-lsp", "commit-commands", "frontend-design"],
+    "nuxt":        ["typescript-lsp", "commit-commands", "frontend-design"],
+    "svelte":      ["typescript-lsp", "commit-commands", "frontend-design"],
+    "typescript":  ["typescript-lsp", "commit-commands", "code-review"],
+    "node":        ["commit-commands", "code-review"],
+    "express":     ["commit-commands", "code-review", "security-guidance"],
+    "fastify":     ["commit-commands", "code-review"],
+    "nestjs":      ["typescript-lsp", "commit-commands", "code-review"],
+    "prisma":      ["code-review", "security-guidance"],
+    "python":      ["pyright-lsp", "commit-commands", "code-review"],
+    "fastapi":     ["pyright-lsp", "commit-commands", "code-review", "security-guidance"],
+    "django":      ["pyright-lsp", "commit-commands", "security-guidance"],
+    "flask":       ["pyright-lsp", "commit-commands"],
+    "go":          ["gopls-lsp", "commit-commands", "code-review"],
+    "rust":        ["rust-analyzer-lsp", "commit-commands", "code-review"],
+    "github-ci":   ["github", "commit-commands"],
+    "docker":      ["security-guidance", "commit-commands"],
+    "plugin-dev":  ["plugin-dev", "commit-commands", "code-review"]
+  }
+}
