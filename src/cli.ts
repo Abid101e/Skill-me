@@ -4,6 +4,7 @@ import { runSearch } from './commands/search.js';
 import { runInstall } from './commands/install.js';
 import { runList } from './commands/list.js';
 import { runUpdate } from './commands/update.js';
+import { runUninstall } from './commands/uninstall.js';
 import { validateScope, validatePluginName, validateMarketplaceId, type Scope } from './installer/index.js';
 import { SkillmeError } from './utils/errors.js';
 import { logger } from './utils/logger.js';
@@ -122,6 +123,14 @@ program
   .description('Refresh the marketplace index from GitHub')
   .action(async () => {
     await runUpdate();
+  });
+
+program
+  .command('uninstall [name]')
+  .description('Remove an installed plugin (interactive if no name given)')
+  .action(async (name?: string) => {
+    if (name) guardPluginName(name);
+    await runUninstall(name);
   });
 
 program.parse();

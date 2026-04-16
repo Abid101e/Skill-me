@@ -3,7 +3,6 @@ import path from 'path';
 import os from 'os';
 import bundledData from '../../data/index.json';
 import { logger } from '../utils/logger.js';
-import { MarketplaceFetchError } from '../utils/errors.js';
 
 export interface Plugin {
   name: string;
@@ -232,8 +231,7 @@ export async function fetchIndex(forceRefresh = false): Promise<IndexData> {
       Object.assign(livePlugins, result.value);
     } else {
       const marketplace = base.marketplaces[i];
-      logger.warn(`Marketplace crawl failed for "${marketplace?.id}": ${String(result.reason)}`);
-      throw new MarketplaceFetchError(marketplace?.id ?? 'unknown', String(result.reason));
+      logger.warn(`Marketplace crawl failed for "${marketplace?.id}" — skipping: ${String(result.reason)}`);
     }
   }
 
