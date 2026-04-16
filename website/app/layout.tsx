@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'skillme — Claude Code plugin manager',
     description: 'Install the right Claude Code plugins for your stack in one command.',
-    url: 'https://abid101e.github.io/Skill-me',
+    url: 'https://skillme-cli.vercel.app',
     siteName: 'skillme',
   },
 };
