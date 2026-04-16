@@ -1,81 +1,144 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "indexUrl": "https://raw.githubusercontent.com/AbidHasanRafi/skillme/main/data/index.json",
+  "cacheTtlMinutes": 60,
   "marketplaces": [
     {
       "id": "claude-plugins-official",
       "repo": "anthropics/claude-plugins-official",
       "trusted": true,
       "description": "Official Anthropic-maintained plugins"
+    },
+    {
+      "id": "cc-marketplace",
+      "repo": "ananddtyagi/cc-marketplace",
+      "trusted": false,
+      "description": "Community marketplace with general-purpose plugins"
+    },
+    {
+      "id": "claude-skills",
+      "repo": "alirezarezvani/claude-skills",
+      "trusted": false,
+      "description": "232+ skills across engineering, marketing, and compliance"
+    },
+    {
+      "id": "awesome-claude-code",
+      "repo": "hesreallyhim/awesome-claude-code",
+      "trusted": false,
+      "description": "Curated collection of skills, hooks, and slash commands"
     }
   ],
   "plugins": {
     "typescript-lsp": {
       "marketplace": "claude-plugins-official",
       "description": "Real-time TypeScript type errors and go-to-definition",
+      "tags": ["typescript", "lsp", "language-server"],
       "trusted": true,
       "requiresBinary": "typescript-language-server"
     },
     "commit-commands": {
       "marketplace": "claude-plugins-official",
       "description": "Git commit, push, and PR creation workflow",
+      "tags": ["git", "commit", "workflow"],
       "trusted": true
     },
     "pr-review-toolkit": {
       "marketplace": "claude-plugins-official",
       "description": "Specialized agents for reviewing pull requests",
+      "tags": ["git", "pr", "review", "workflow"],
       "trusted": true
     },
     "github": {
       "marketplace": "claude-plugins-official",
       "description": "GitHub integration for issues, PRs, and repositories",
+      "tags": ["github", "git", "integration"],
+      "trusted": true
+    },
+    "gitlab": {
+      "marketplace": "claude-plugins-official",
+      "description": "GitLab integration for issues, MRs, and repositories",
+      "tags": ["gitlab", "git", "integration"],
       "trusted": true
     },
     "code-review": {
       "marketplace": "claude-plugins-official",
       "description": "Automated code review skill",
+      "tags": ["review", "quality", "workflow"],
       "trusted": true
     },
     "code-simplifier": {
       "marketplace": "claude-plugins-official",
       "description": "Simplify and clean up code for clarity and maintainability",
+      "tags": ["quality", "refactor", "simplify"],
       "trusted": true
     },
     "frontend-design": {
       "marketplace": "claude-plugins-official",
       "description": "Frontend design and UI component skills",
+      "tags": ["frontend", "design", "ui", "css"],
       "trusted": true
     },
     "security-guidance": {
       "marketplace": "claude-plugins-official",
       "description": "Security best practices and vulnerability detection",
+      "tags": ["security", "vulnerability", "owasp"],
       "trusted": true
     },
     "pyright-lsp": {
       "marketplace": "claude-plugins-official",
       "description": "Real-time Python type errors and go-to-definition",
+      "tags": ["python", "lsp", "language-server"],
       "trusted": true,
       "requiresBinary": "pyright-langserver"
     },
     "gopls-lsp": {
       "marketplace": "claude-plugins-official",
       "description": "Real-time Go type errors and code navigation",
+      "tags": ["go", "lsp", "language-server"],
       "trusted": true,
       "requiresBinary": "gopls"
     },
     "rust-analyzer-lsp": {
       "marketplace": "claude-plugins-official",
       "description": "Real-time Rust type errors and code navigation",
+      "tags": ["rust", "lsp", "language-server"],
       "trusted": true,
       "requiresBinary": "rust-analyzer"
     },
     "plugin-dev": {
       "marketplace": "claude-plugins-official",
       "description": "Toolkit for creating Claude Code plugins and skills",
+      "tags": ["plugin", "development", "skill"],
       "trusted": true
     },
     "hookify": {
       "marketplace": "claude-plugins-official",
       "description": "Automate Claude Code behaviors with event hooks",
+      "tags": ["hooks", "automation", "workflow"],
+      "trusted": true
+    },
+    "feature-dev": {
+      "marketplace": "claude-plugins-official",
+      "description": "End-to-end feature development workflow",
+      "tags": ["workflow", "feature", "development"],
+      "trusted": true
+    },
+    "agent-sdk-dev": {
+      "marketplace": "claude-plugins-official",
+      "description": "Tools for building with the Claude Agent SDK",
+      "tags": ["agent", "sdk", "development"],
+      "trusted": true
+    },
+    "math-olympiad": {
+      "marketplace": "claude-plugins-official",
+      "description": "Mathematical problem solving and proof assistance",
+      "tags": ["math", "education", "problem-solving"],
+      "trusted": true
+    },
+    "session-report": {
+      "marketplace": "claude-plugins-official",
+      "description": "Generate reports of your Claude Code sessions",
+      "tags": ["reporting", "analytics", "session"],
       "trusted": true
     }
   },
