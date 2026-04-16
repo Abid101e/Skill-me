@@ -1,28 +1,34 @@
 # skillme
 
-> The missing package manager for Claude Code plugins.
+> The missing plugin manager for Claude Code.
 
-`skillme` detects your project stack and installs the right Claude Code plugins in one command — no manual searching, no browsing marketplaces, no editing config files.
+[![npm](https://img.shields.io/npm/v/skillme?color=10b981&label=npm)](https://www.npmjs.com/package/skillme)
+[![license](https://img.shields.io/github/license/Abid101e/Skill-me?color=10b981)](LICENSE)
 
----
+`skillme` detects your project stack and installs the right Claude Code plugins in one command — no manual searching, no browsing marketplaces, no editing config files by hand.
 
-## The Problem
-
-Finding and installing Claude Code plugins today means:
-
-1. Manually browsing the official marketplace
-2. Searching GitHub for community marketplaces (if you even know they exist)
-3. Running multiple commands to add each marketplace and install each plugin
-4. Doing this again for every project, every teammate
-
-There is no way to say: *"I just cloned a Next.js + Prisma project — what should I install?"*
+**[Browse plugins & stacks → skillme-cli.vercel.app](https://skillme-cli.vercel.app)**
 
 ---
 
-## The Solution
+## Install
+
+```bash
+npm install -g skillme
+```
+
+Or run without installing:
 
 ```bash
 npx skillme init
+```
+
+---
+
+## Quick start
+
+```bash
+skillme init
 ```
 
 ```
@@ -41,7 +47,6 @@ Recommended plugins for your stack:
   ◉  pr-review-toolkit    [official]  PR review agent
   ◉  github               [official]  GitHub integration
   ◉  code-review          [official]  Automated code review skill
-  ○  explanatory-output   [official]  More detailed Claude responses
 
 Space to toggle · Enter to install
 
@@ -60,88 +65,92 @@ Done. Run /reload-plugins inside Claude Code to activate.
 ## Commands
 
 ### `skillme init`
-Detects your stack and recommends plugins. Interactive checklist to select and install.
+Detects your stack and recommends plugins. Interactive checklist — select what you want, install in one shot.
 
 ```bash
-npx skillme init
+skillme init
+skillme init --scope project   # share with your team via git
 ```
 
 ### `skillme search <query>`
-Searches across all known marketplaces for plugins matching your query.
+Searches across all known marketplaces.
 
 ```bash
-npx skillme search "git workflow"
-npx skillme search "python lsp"
+skillme search "git workflow"
+skillme search "python lsp"
 ```
 
 ### `skillme install <name>`
-Installs a specific plugin. Finds the best source automatically.
+Installs a specific plugin by name.
 
 ```bash
-npx skillme install commit-commands
-npx skillme install github
+skillme install commit-commands
+skillme install github
+```
+
+### `skillme uninstall <name>`
+Removes an installed plugin.
+
+```bash
+skillme uninstall commit-commands
 ```
 
 ### `skillme list`
 Shows all installed plugins grouped by scope.
 
 ```bash
-npx skillme list
+skillme list
 ```
 
 ### `skillme update`
-Refreshes the marketplace index and checks for plugin updates.
+Refreshes the marketplace index and checks for updates.
 
 ```bash
-npx skillme update
+skillme update
 ```
 
 ---
 
-## Install Scopes
+## Install scopes
 
-Every command supports `--scope` to control who gets the plugin:
+Every command accepts `--scope` to control where the plugin is saved:
 
-| Scope | Where it applies | Use case |
+| Scope | File | Use case |
 |---|---|---|
-| `project` | `.claude/settings.json` | Shared with your whole team via git |
-| `user` | `~/.claude/settings.json` | Just you, across all projects (default) |
+| `user` | `~/.claude/settings.json` | Just you, all projects (default) |
+| `project` | `.claude/settings.json` | Shared with your team via git |
 | `local` | `.claude/settings.local.json` | Just you, this project, gitignored |
 
 ```bash
-npx skillme init --scope project    # recommended for teams
-npx skillme init --scope user       # personal setup
+skillme init --scope project   # recommended for teams
 ```
 
 ---
 
-## Supported Stacks
+## Supported stacks
 
-| Stack | Detected from | Recommended plugins |
-|---|---|---|
-| Next.js | `package.json` | typescript-lsp, commit-commands, pr-review-toolkit, github |
-| React | `package.json` | typescript-lsp, commit-commands, frontend-design |
-| TypeScript | `package.json` / `tsconfig.json` | typescript-lsp |
-| Python | `requirements.txt` / `pyproject.toml` | pyright-lsp, commit-commands, code-review |
-| FastAPI | `requirements.txt` | pyright-lsp, commit-commands, code-review |
-| Go | `go.mod` | gopls-lsp, commit-commands |
-| Rust | `Cargo.toml` | rust-analyzer-lsp, commit-commands |
-| Prisma | `package.json` | code-review |
-| GitHub CI | `.github/workflows/` | github, commit-commands |
-| Docker | `Dockerfile` | security-guidance |
+20 stacks detected automatically from your project files:
 
-More stacks added continuously. See [PLAN.md](./PLAN.md) for the roadmap.
+| Category | Stacks |
+|---|---|
+| Frontend | Next.js, React, Vue, Nuxt, Svelte |
+| Backend | Node.js, Express, Fastify, NestJS, FastAPI, Django, Flask |
+| Language | TypeScript, Python, Go, Rust |
+| Database | Prisma |
+| DevOps | GitHub CI, Docker |
+
+Detection reads `package.json`, `go.mod`, `Cargo.toml`, `requirements.txt`, `pyproject.toml`, `Dockerfile`, and `.github/workflows/`.
 
 ---
 
-## How It Works
+## How it works
 
-1. **Detects your stack** by reading config files (`package.json`, `go.mod`, `Cargo.toml`, etc.)
-2. **Fetches recommendations** from a curated index of known marketplaces
-3. **Ranks plugins** by trust (Anthropic official first), then GitHub stars and freshness
-4. **Installs via Claude Code CLI** — wraps `claude plugin install` under the hood, no new systems
+1. **Detects your stack** by reading config files in your project root
+2. **Fetches recommendations** from a curated index built from 4 marketplaces (167+ plugins)
+3. **Ranks plugins** — Anthropic official first, then community
+4. **Installs via Claude Code CLI** — wraps `claude plugin install` under the hood
 
-The marketplace index (`data/index.json`) lives in this repo and is fetched fresh on each run. Anyone can submit a PR to add a community marketplace.
+The index (`data/index.json`) lives in this repo and refreshes nightly via GitHub Actions. No external service required.
 
 ---
 
@@ -154,9 +163,9 @@ The marketplace index (`data/index.json`) lives in this repo and is fetched fres
 
 ## Contributing
 
-### Adding a marketplace to the index
+### Add a marketplace
 
-Edit `data/index.json` and open a PR:
+Edit the `marketplaces` array in `data/index.json` and open a PR:
 
 ```json
 {
@@ -167,7 +176,9 @@ Edit `data/index.json` and open a PR:
 }
 ```
 
-### Adding stack recommendations
+The marketplace must follow the `plugins/<name>/.claude-plugin/plugin.json` structure used by the official Anthropic marketplace.
+
+### Add stack recommendations
 
 Edit the `recommendations` section in `data/index.json`:
 
@@ -175,29 +186,26 @@ Edit the `recommendations` section in `data/index.json`:
 "your-framework": ["plugin-one", "plugin-two"]
 ```
 
-### Building locally
+### Build locally
 
 ```bash
-git clone https://github.com/your-username/skillme
-cd skillme
+git clone https://github.com/Abid101e/Skill-me
+cd Skill-me
 npm install
-npm run dev
+npm run build       # compiles src/ → dist/ with tsup
+npm run dev         # run CLI directly with tsx (no build step)
 ```
 
 ---
 
-## Why Not Just Use `/plugin discover`?
+## Why not `/plugin discover`?
 
-The built-in `/plugin` Discover tab only shows the official Anthropic marketplace. It has no:
-- Cross-marketplace search
-- Stack-based recommendations
-- Quality ranking across sources
-- One-command team setup
+The built-in Claude Code plugin tab only shows the official Anthropic marketplace. It has no cross-marketplace search, no stack-based recommendations, and no one-command team setup.
 
-`skillme` is the layer on top that makes discovery and install actually fast.
+`skillme` is the layer on top that makes discovery and install fast.
 
 ---
 
 ## License
 
-MIT
+MIT — [Md. Abid Hasan](https://github.com/Abid101e)
