@@ -1,6 +1,6 @@
 {
   "name": "skillme",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The missing package manager for Claude Code plugins",
   "bin": {
     "skillme": "dist/cli.js"
@@ -48,8 +48,12 @@
     "node": ">=18.0.0"
   },
   "tsup": {
-    "entry": ["src/cli.ts"],
-    "format": ["cjs"],
+    "entry": [
+      "src/cli.ts"
+    ],
+    "format": [
+      "cjs"
+    ],
     "clean": true,
     "banner": {
       "js": "#!/usr/bin/env node"
