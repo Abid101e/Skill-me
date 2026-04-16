@@ -16,16 +16,10 @@
       "description": "Community marketplace with general-purpose plugins"
     },
     {
-      "id": "claude-skills",
-      "repo": "alirezarezvani/claude-skills",
+      "id": "composio-plugins",
+      "repo": "ComposioHQ/awesome-claude-plugins",
       "trusted": false,
-      "description": "232+ skills across engineering, marketing, and compliance"
-    },
-    {
-      "id": "awesome-claude-code",
-      "repo": "hesreallyhim/awesome-claude-code",
-      "trusted": false,
-      "description": "Curated collection of skills, hooks, and slash commands"
+      "description": "Composio's curated collection of Claude Code plugins"
     }
   ],
   "plugins": {

@@ -1,4 +1,4 @@
-import { getIndexData, getFeaturedPlugins, getStats } from '@/lib/data';
+import { getIndexData, getFeaturedPlugins, getCommunityPlugins, getStats } from '@/lib/data';
 import PluginCard from '@/components/PluginCard';
 import CopyCommand from '@/components/CopyCommand';
 
@@ -11,6 +11,7 @@ export default async function Home() {
   }
 
   const featured = data ? getFeaturedPlugins(data) : [];
+  const community = data ? getCommunityPlugins(data) : [];
   const stats = data ? getStats(data) : { plugins: 167, marketplaces: 4, trusted: 18 };
 
   return (
@@ -191,6 +192,35 @@ export default async function Home() {
             </p>
           )}
         </section>
+
+        {/* ── COMMUNITY PICKS ── */}
+        {community.length > 0 && (
+          <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 sm:pb-32 md:px-12">
+            <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <h2
+                  className="text-3xl font-bold text-white"
+                  style={{ fontFamily: 'Syne, sans-serif' }}
+                >
+                  Community Picks
+                </h2>
+                <p className="mt-2 text-sm text-zinc-500">
+                  Popular plugins from the community marketplace
+                </p>
+              </div>
+              <span className="hidden font-mono text-xs text-zinc-600 sm:block">
+                {stats.plugins - stats.trusted}+ community plugins
+              </span>
+            </div>
+            <div className="card-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {community.map(plugin => (
+                <div key={plugin.name} className="fade-up">
+                  <PluginCard plugin={plugin} />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ── FOOTER ── */}
         <footer className="border-t border-white/6 px-4 py-8 sm:px-6 md:px-12">

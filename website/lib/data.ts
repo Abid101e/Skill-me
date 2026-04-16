@@ -16,6 +16,13 @@ export function getFeaturedPlugins(data: IndexData): Plugin[] {
     .slice(0, 9);
 }
 
+export function getCommunityPlugins(data: IndexData, limit = 6): Plugin[] {
+  return Object.entries(data.plugins)
+    .filter(([, p]) => !p.trusted && p.description !== `Plugin from ${p.marketplace}`)
+    .map(([name, p]) => ({ name, ...p }))
+    .slice(0, limit);
+}
+
 export function getStats(data: IndexData) {
   return {
     plugins: Object.keys(data.plugins).length,
