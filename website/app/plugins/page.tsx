@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default async function PluginsPage() {
-  const plugins: Plugin[] = await getIndexData()
-    .then(data => getAllPlugins(data))
-    .catch(() => []);
+  const data = await getIndexData().catch(() => null);
+  const plugins: Plugin[] = data ? getAllPlugins(data) : [];
+  const featuredNames: string[] = data?.featured ?? [];
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -33,6 +33,9 @@ export default async function PluginsPage() {
           <div className="flex items-center gap-3 sm:gap-4">
             <a href="/stacks" className="text-sm text-zinc-400 transition-colors hover:text-white">
               Stacks
+            </a>
+            <a href="/docs" className="text-sm text-zinc-400 transition-colors hover:text-white">
+              Docs
             </a>
             <a
               href="https://github.com/Abid101e/Skill-me"
@@ -74,7 +77,7 @@ export default async function PluginsPage() {
         <Suspense fallback={
           <div className="py-24 text-center font-mono text-sm text-zinc-600">Loading plugins…</div>
         }>
-          <PluginBrowser plugins={plugins} />
+          <PluginBrowser plugins={plugins} featuredNames={featuredNames} />
         </Suspense>
 
         </main>

@@ -9,6 +9,7 @@ import { runUninstall } from './commands/uninstall.js';
 import { runInfo } from './commands/info.js';
 import { runDoctor } from './commands/doctor.js';
 import { runUpgrade } from './commands/upgrade.js';
+import { runSync } from './commands/sync.js';
 import { validateScope, validatePluginName, validateMarketplaceId, type Scope } from './installer/index.js';
 import { SkillmeError } from './utils/errors.js';
 import { logger } from './utils/logger.js';
@@ -91,8 +92,9 @@ program
   .command('init')
   .description('Detect your stack and install recommended Claude Code plugins')
   .option('-s, --scope <scope>', 'install scope: user | project | local', 'project')
-  .action(async (options: { scope: string }) => {
-    await runInit({ scope: guardScope(options.scope) });
+  .option('--ai', 'use Claude to analyze your project for smarter, project-specific recommendations')
+  .action(async (options: { scope: string; ai?: boolean }) => {
+    await runInit({ scope: guardScope(options.scope), aiAssist: options.ai });
   });
 
 program
@@ -148,6 +150,14 @@ program
   .description('Check your environment and installed plugins for problems')
   .action(async () => {
     await runDoctor();
+  });
+
+program
+  .command('sync')
+  .description('Sync plugins from skillme.json lockfile, or save current setup to it')
+  .option('--save', 'overwrite skillme.json with current project-scope plugins')
+  .action(async (options: { save?: boolean }) => {
+    await runSync(options);
   });
 
 program

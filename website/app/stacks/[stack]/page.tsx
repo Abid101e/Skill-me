@@ -125,7 +125,7 @@ export default async function StackPage({ params }: Props) {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {info.plugins.map(plugin => (
                   <div key={plugin.name} className="h-full">
-                    <PluginCard plugin={plugin} />
+                    <PluginCard plugin={plugin} featured={data.featured?.includes(plugin.name)} />
                   </div>
                 ))}
               </div>

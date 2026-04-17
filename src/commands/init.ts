@@ -5,6 +5,7 @@ import { assertClaudeInstalled, installPlugins, type Scope } from '../installer/
 import { fetchIndex } from '../marketplace/index.js';
 import { logger } from '../utils/logger.js';
 import { SkillmeError } from '../utils/errors.js';
+import { getAIRecommendations } from '../ai/recommend.js';
 import indexData from '../../data/index.json';
 
 interface PluginEntry {
@@ -21,7 +22,7 @@ type BundledData = {
 
 const bundled = indexData as unknown as BundledData;
 
-export async function runInit(options: { scope?: Scope }) {
+export async function runInit(options: { scope?: Scope; aiAssist?: boolean }) {
   intro(pc.bold(pc.cyan('skillme') + ' — Claude Code plugin manager'));
 
   try {
@@ -47,10 +48,33 @@ export async function runInit(options: { scope?: Scope }) {
     let recommendations: ReturnType<typeof getRecommendations>;
     try {
       const s2 = spinner();
-      s2.start('Fetching plugin index');
+      s2.start(options.aiAssist ? 'Fetching plugin index for AI analysis' : 'Fetching plugin index');
       const liveData = await fetchIndex();
       s2.stop('Plugin index ready');
-      recommendations = getRecommendations(tags, liveData.plugins as unknown as Record<string, PluginEntry>, liveData.recommendations);
+
+      if (options.aiAssist) {
+        const s3 = spinner();
+        s3.start('Asking Claude to analyze your project…');
+        const aiRecs = await getAIRecommendations(
+          process.cwd(),
+          liveData.plugins as unknown as Record<string, PluginEntry>,
+          tags,
+        );
+        s3.stop('Analysis complete');
+
+        if (aiRecs && aiRecs.length > 0) {
+          recommendations = aiRecs.map(r => ({
+            name: r.name,
+            description: r.reason,
+            trusted: (liveData.plugins as unknown as Record<string, PluginEntry>)[r.name]?.trusted ?? false,
+          }));
+        } else {
+          log.warn('AI analysis unavailable — falling back to stack-based recommendations.');
+          recommendations = getRecommendations(tags, liveData.plugins as unknown as Record<string, PluginEntry>, liveData.recommendations);
+        }
+      } else {
+        recommendations = getRecommendations(tags, liveData.plugins as unknown as Record<string, PluginEntry>, liveData.recommendations);
+      }
     } catch (err) {
       logger.warn(`Could not fetch live index, using bundled data: ${String(err)}`);
       recommendations = getRecommendations(tags, bundled.plugins, bundled.recommendations);
@@ -74,13 +98,13 @@ export async function runInit(options: { scope?: Scope }) {
     }
 
     const selected = await multiselect({
-      message: 'Recommended plugins for your stack (space to toggle, enter to install):',
+      message: 'Select plugins to install (space to toggle, enter to confirm):',
       options: recommendations.map(p => ({
         value: p.name,
-        label: `${pc.bold(p.name)}  ${pc.dim(p.description)}`,
+        label: `${pc.bold(p.name)}  ${pc.dim(p.description.split('\n')[0].replace(/[#*`>_~]/g, '').trim().slice(0, 72))}`,
         hint: p.trusted ? pc.green('official') : pc.yellow('community'),
       })),
-      initialValues: recommendations.map(p => p.name),
+      initialValues: recommendations.filter(p => p.trusted).map(p => p.name),
     });
 
     if (isCancel(selected) || (selected as string[]).length === 0) {

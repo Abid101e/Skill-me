@@ -21,4 +21,5 @@ export interface IndexData {
   marketplaces: Marketplace[];
   plugins: Record<string, Omit<Plugin, 'name'>>;
   recommendations: Record<string, string[]>;
+  featured?: string[];
 }

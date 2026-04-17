@@ -20,6 +20,12 @@
       "repo": "ComposioHQ/awesome-claude-plugins",
       "trusted": false,
       "description": "Composio's curated collection of Claude Code plugins"
+    },
+    {
+      "id": "obra-plugins",
+      "repo": "obra/superpowers",
+      "trusted": false,
+      "description": "Obra's agentic skills and superpowers framework for Claude Code"
     }
   ],
   "plugins": {
@@ -294,13 +300,13 @@
     "asana": {
       "marketplace": "claude-plugins-official",
       "description": "Asana project management integration. Create and manage tasks, search projects, update assignments, track progress, and integrate your development workflow with Asana's work management platform.",
-      "tags": [],
+      "tags": ["asana", "project-management", "tasks", "mcp"],
       "trusted": true
     },
     "context7": {
       "marketplace": "claude-plugins-official",
       "description": "Upstash Context7 MCP server for up-to-date documentation lookup. Pull version-specific documentation and code examples directly from source repositories into your LLM context.",
-      "tags": [],
+      "tags": ["documentation", "mcp", "knowledge-base", "context"],
       "trusted": true
     },
     "discord": {
@@ -330,7 +336,7 @@
     "firebase": {
       "marketplace": "claude-plugins-official",
       "description": "Google Firebase MCP integration. Manage Firestore databases, authentication, cloud functions, hosting, and storage. Build and manage your Firebase backend directly from your development workflow.",
-      "tags": [],
+      "tags": ["firebase", "database", "cloud", "mcp", "google"],
       "trusted": true
     },
     "github": {
@@ -379,25 +385,25 @@
     "laravel-boost": {
       "marketplace": "claude-plugins-official",
       "description": "Laravel development toolkit MCP server. Provides intelligent assistance for Laravel applications including Artisan commands, Eloquent queries, routing, migrations, and framework-specific code generation.",
-      "tags": [],
+      "tags": ["laravel", "php", "framework", "mcp"],
       "trusted": true
     },
     "linear": {
       "marketplace": "claude-plugins-official",
       "description": "Linear issue tracking integration. Create issues, manage projects, update statuses, search across workspaces, and streamline your software development workflow with Linear's modern issue tracker.",
-      "tags": [],
+      "tags": ["linear", "issues", "project-management", "mcp"],
       "trusted": true
     },
     "playwright": {
       "marketplace": "claude-plugins-official",
       "description": "Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
-      "tags": [],
+      "tags": ["testing", "e2e", "browser", "automation", "mcp"],
       "trusted": true
     },
     "serena": {
       "marketplace": "claude-plugins-official",
       "description": "Semantic code analysis MCP server providing intelligent code understanding, refactoring suggestions, and codebase navigation through language server protocol integration.",
-      "tags": [],
+      "tags": ["refactor", "navigation", "analysis", "mcp"],
       "trusted": true
     },
     "telegram": {
@@ -414,7 +420,7 @@
     "terraform": {
       "marketplace": "claude-plugins-official",
       "description": "The Terraform MCP Server provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development.",
-      "tags": [],
+      "tags": ["terraform", "infrastructure", "devops", "iac", "mcp"],
       "trusted": true
     },
     "2-commit-fast": {
@@ -1385,23 +1391,43 @@
     "supabase": {
       "marketplace": "claude-plugins-official",
       "description": "Supabase MCP integration for database operations, authentication, storage, and real-time subscriptions. Manage your Supabase projects, run SQL queries, and interact with your backend directly.",
-      "tags": [],
+      "tags": ["supabase", "database", "postgresql", "mcp"],
       "trusted": true
+    },
+    "superpowers": {
+      "marketplace": "obra-plugins",
+      "description": "Agentic skills framework and software development methodology with lifecycle planning. The most-installed Claude Code plugin with 355k+ installs — adds powerful workflow, planning, and iterative development skills.",
+      "tags": ["workflow", "agents", "productivity", "development", "planning"],
+      "trusted": false
     }
   },
+  "featured": [
+    "frontend-design",
+    "superpowers",
+    "context7",
+    "code-review",
+    "github",
+    "playwright",
+    "commit-commands",
+    "security-guidance",
+    "feature-dev"
+  ],
   "recommendations": {
     "nextjs": [
       "typescript-lsp",
       "commit-commands",
       "pr-review-toolkit",
       "github",
-      "code-review"
+      "code-review",
+      "context7",
+      "playwright"
     ],
     "react": [
       "typescript-lsp",
       "commit-commands",
       "frontend-design",
-      "code-review"
+      "code-review",
+      "context7"
     ],
     "vue": [
       "typescript-lsp",
@@ -1448,13 +1474,15 @@
     "python": [
       "pyright-lsp",
       "commit-commands",
-      "code-review"
+      "code-review",
+      "context7"
     ],
     "fastapi": [
       "pyright-lsp",
       "commit-commands",
       "code-review",
-      "security-guidance"
+      "security-guidance",
+      "context7"
     ],
     "django": [
       "pyright-lsp",

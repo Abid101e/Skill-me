@@ -5,9 +5,10 @@ import type { Plugin } from '@/lib/types';
 
 interface Props {
   plugin: Plugin;
+  featured?: boolean;
 }
 
-export default function PluginCard({ plugin }: Props) {
+export default function PluginCard({ plugin, featured }: Props) {
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'error'>('idle');
 
   const handleCopy = () => {
@@ -45,12 +46,13 @@ export default function PluginCard({ plugin }: Props) {
       }}
     >
 
-      {/* top row — name + badge */}
+      {/* top row — name + badges */}
       <div className="mb-3 flex min-w-0 items-start justify-between gap-2">
         <a
           href={`/plugins/${encodeURIComponent(plugin.name)}`}
           className="min-w-0 truncate font-mono text-sm font-semibold text-white transition-colors hover:text-emerald-400 sm:text-base"
         >
+          {featured && <span className="mr-1.5 text-amber-400">★</span>}
           {plugin.name}
         </a>
         <span

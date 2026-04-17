@@ -117,6 +117,27 @@ Refreshes the marketplace index from GitHub.
 skillme update
 ```
 
+### `skillme sync`
+Syncs your project plugin setup via a `skillme.json` lockfile — the team-sharing feature.
+
+**First time (create the lockfile):**
+```bash
+skillme sync          # reads project-scope plugins → writes skillme.json
+git add skillme.json && git commit -m "add skillme plugin config"
+```
+
+**New team member (install from lockfile):**
+```bash
+git pull              # gets skillme.json
+skillme sync          # installs any missing plugins automatically
+```
+
+**Update the lockfile after installing new plugins:**
+```bash
+skillme install some-plugin --scope project
+skillme sync --save   # overwrites skillme.json with current state
+```
+
 ### `skillme doctor`
 Checks your environment for problems — Claude CLI, Node version, plugin binary requirements, and settings file integrity.
 

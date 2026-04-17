@@ -12,9 +12,11 @@ type Filter = 'all' | 'official' | 'community';
 
 interface Props {
   plugins: Plugin[];
+  featuredNames?: string[];
 }
 
-export default function PluginBrowser({ plugins }: Props) {
+export default function PluginBrowser({ plugins, featuredNames }: Props) {
+  const featuredSet = useMemo(() => new Set(featuredNames ?? []), [featuredNames]);
   const searchParams = useSearchParams();
   const router       = useRouter();
 
@@ -153,7 +155,7 @@ export default function PluginBrowser({ plugins }: Props) {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {paginated.map(plugin => (
             <div key={plugin.name} className="h-full">
-              <PluginCard plugin={plugin} />
+              <PluginCard plugin={plugin} featured={featuredSet.has(plugin.name)} />
             </div>
           ))}
         </div>

@@ -42,6 +42,9 @@ export default async function Home() {
             <a href="/stacks" className="text-sm text-zinc-400 transition-colors hover:text-white">
               Stacks
             </a>
+            <a href="/docs" className="text-sm text-zinc-400 transition-colors hover:text-white">
+              Docs
+            </a>
             <a
               href="https://github.com/Abid101e/Skill-me"
               target="_blank"
@@ -217,7 +220,7 @@ export default async function Home() {
             <div className="card-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map(plugin => (
                 <div key={plugin.name} className="fade-up h-full">
-                  <PluginCard plugin={plugin} />
+                  <PluginCard plugin={plugin} featured />
                 </div>
               ))}
             </div>

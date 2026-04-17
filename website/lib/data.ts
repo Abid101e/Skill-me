@@ -78,6 +78,12 @@ export async function getIndexData(): Promise<IndexData> {
 }
 
 export function getFeaturedPlugins(data: IndexData): Plugin[] {
+  if (data.featured?.length) {
+    return data.featured
+      .map(name => findPlugin(data, name))
+      .filter((p): p is Plugin => p !== undefined)
+      .slice(0, 9);
+  }
   return Object.entries(data.plugins)
     .filter(([, p]) => p.trusted)
     .map(([name, p]) => ({ name, ...p }))
@@ -113,4 +119,25 @@ export function getStats(data: IndexData) {
     marketplaces: data.marketplaces.length,
     trusted: Object.values(data.plugins).filter(p => p.trusted).length,
   };
+}
+
+export function getMarketplace(data: IndexData, id: string) {
+  return data.marketplaces.find(m => m.id === id);
+}
+
+export function getRelatedPlugins(data: IndexData, plugin: Plugin, limit = 4): Plugin[] {
+  const myTags = new Set(plugin.tags);
+  const myStacks = new Set(getStacksForPlugin(data, plugin.name));
+
+  return Object.entries(data.plugins)
+    .filter(([name]) => name !== plugin.name)
+    .map(([name, p]) => {
+      const sharedTags   = p.tags.filter(t => myTags.has(t)).length;
+      const sharedStacks = getStacksForPlugin(data, name).filter(s => myStacks.has(s)).length;
+      return { score: sharedTags * 2 + sharedStacks, plugin: { name, ...p } };
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(({ plugin }) => plugin);
 }
