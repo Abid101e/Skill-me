@@ -104,7 +104,7 @@ export async function runInit(options: { scope?: Scope; aiAssist?: boolean }) {
         label: `${pc.bold(p.name)}  ${pc.dim(p.description.split('\n')[0].replace(/[#*`>_~]/g, '').trim().slice(0, 72))}`,
         hint: p.trusted ? pc.green('official') : pc.yellow('community'),
       })),
-      initialValues: recommendations.filter(p => p.trusted).map(p => p.name),
+      initialValues: [],
     });
 
     if (isCancel(selected) || (selected as string[]).length === 0) {

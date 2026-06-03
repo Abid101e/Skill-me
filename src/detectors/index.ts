@@ -82,8 +82,8 @@ export function detectStack(cwd: string): DetectedStack {
     ...detectExtras(cwd),
   ]);
 
-  // README fills in any gaps not already found by file detectors
-  const readmeTags = detectReadme(cwd, fileTags);
+  // README only used as last resort when no concrete project files were found
+  const readmeTags = fileTags.size === 0 ? detectReadme(cwd, fileTags) : [];
 
   const allTags = new Set<string>([...fileTags, ...readmeTags]);
   const tags = [...allTags];

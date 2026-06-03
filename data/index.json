@@ -1,5 +1,5 @@
 {
-  "version": "2026.06.03",
+  "version": "2026.06.03.1",
   "indexUrl": "https://raw.githubusercontent.com/Abid101e/Skill-me/main/data/index.json",
   "cacheTtlMinutes": 60,
   "marketplaces": [
@@ -26,6 +26,24 @@
       "repo": "obra/superpowers",
       "trusted": false,
       "description": "Obra's agentic skills and superpowers framework for Claude Code"
+    },
+    {
+      "id": "sgaunet-plugins",
+      "repo": "sgaunet/claude-plugins",
+      "trusted": false,
+      "description": "Specialized plugins for DevOps infrastructure, software engineering, and Go development"
+    },
+    {
+      "id": "xiaolai-marketplace",
+      "repo": "xiaolai/claude-plugin-marketplace",
+      "trusted": false,
+      "description": "Central community marketplace for Claude Code plugins curated by xiaolai"
+    },
+    {
+      "id": "claude-market",
+      "repo": "claude-market/marketplace",
+      "trusted": false,
+      "description": "Open source, hand-curated marketplace for Claude Code tools, agents, and skills"
     }
   ],
   "plugins": {
@@ -489,6 +507,52 @@
         "devops",
         "iac",
         "mcp"
+      ],
+      "trusted": true
+    },
+    "airtable": {
+      "marketplace": "claude-plugins-official",
+      "description": "Airtable integration for Claude Code. Create bases and schema, manage records, build views, and sync data across Jira, Salesforce, Zendesk, Google Drive, and Databricks.",
+      "tags": [
+        "airtable",
+        "database",
+        "project-management",
+        "mcp"
+      ],
+      "trusted": true
+    },
+    "azure": {
+      "marketplace": "claude-plugins-official",
+      "description": "Azure cloud services integration. List resources, validate deployments, diagnose infrastructure issues, and optimize costs across 50+ Azure services including App Service, AKS, Functions, and Storage.",
+      "tags": [
+        "azure",
+        "cloud",
+        "infrastructure",
+        "devops",
+        "mcp"
+      ],
+      "trusted": true
+    },
+    "mongodb": {
+      "marketplace": "claude-plugins-official",
+      "description": "MongoDB MCP server for connecting to databases, exploring collections, running queries, managing schema, and performing data engineering tasks directly from your development workflow.",
+      "tags": [
+        "mongodb",
+        "database",
+        "nosql",
+        "mcp"
+      ],
+      "trusted": true
+    },
+    "aikido-security": {
+      "marketplace": "claude-plugins-official",
+      "description": "Aikido Security scanning for Claude Code — SAST, secrets detection, and IaC vulnerability scanning. Monitors code edits, diffs, and commits in real time to flag dangerous patterns before they reach production.",
+      "tags": [
+        "security",
+        "sast",
+        "vulnerability",
+        "iac",
+        "secrets"
       ],
       "trusted": true
     },
@@ -1536,7 +1600,8 @@
     "express": [
       "commit-commands",
       "code-review",
-      "security-guidance"
+      "security-guidance",
+      "mongodb"
     ],
     "fastify": [
       "commit-commands",
@@ -1562,7 +1627,8 @@
       "commit-commands",
       "code-review",
       "security-guidance",
-      "context7"
+      "context7",
+      "aikido-security"
     ],
     "django": [
       "pyright-lsp",
@@ -1585,11 +1651,13 @@
     ],
     "github-ci": [
       "github",
-      "commit-commands"
+      "commit-commands",
+      "airtable"
     ],
     "docker": [
       "security-guidance",
-      "commit-commands"
+      "commit-commands",
+      "azure"
     ],
     "plugin-dev": [
       "plugin-dev",
@@ -1614,7 +1682,8 @@
     "spring": [
       "jdtls-lsp",
       "commit-commands",
-      "security-guidance"
+      "security-guidance",
+      "aikido-security"
     ],
     "ruby": [
       "ruby-lsp",
@@ -1624,7 +1693,8 @@
     "rails": [
       "ruby-lsp",
       "commit-commands",
-      "security-guidance"
+      "security-guidance",
+      "aikido-security"
     ],
     "php": [
       "php-lsp",
